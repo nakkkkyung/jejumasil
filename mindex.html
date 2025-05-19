@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제주마실</title>
+    <!-- mobile용 파비콘 주소-->
+    <link rel="icon" href="./images/f_logo_icon.ico" type="image/x-icon">
+    <!-- 1. 초기화 -->
+    <link rel="stylesheet" href="./css/mreset.css" type="text/css">
+
+    <!-- 2. 공통서식 -->
+    <link rel="stylesheet" href="./css/mbase.css" type="text/css">
+
+    <!-- 3. 공통 레이아웃(layout) -->
+    <link rel="stylesheet" href="./css/mlayout.css" type="text/css">
+
+    <!-- 4. 메인콘텐츠 서식 -->
+    <link rel="stylesheet" href="./css/mmain.css" type="text/css">
+
+    <!-- 5. 스와이퍼 플러그인 css -->
+    <link rel="stylesheet" href="./css/mswiper.css" type="text/css">
+
+    <!-- 6. 아이콘폰트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css">
+
+    <!-- 7. 접두사를 자동으로 붙여주는 스크립트 -->
+    <script src="./script/prefixfree.min.js"></script>
+    
+    <!-- 8. 올레길 스와이퍼 슬라이드 -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- 9. 제이쿼리 라이브러리 cdn방식-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+    <!-- 10. 제이쿼리 UI라이브러리 -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+</head>
+<body>
+<!-- 알림 띄우기 -->
+<script>
+    window.alert('이 페이지는 모바일 해상도에 최적화 되어있습니다.');
+</script>
+    <!-- 헤더영역 시작 -->
+    <header id="header">
+        <h1>
+            <a href="mindex.html" title="메인페이지로 바로가기"> 
+                <img src="./images/h1_header_logo.png" alt="상단로고">
+            </a>
+        </h1>
+
+        <!-- 햄버거 버튼 -->
+        <div class="toggle"><img src="./images/ico_bars.png" alt="전체메뉴버튼"></div>
+
+        <nav class="navi">
+            <i class="fas fa-times"></i>
+
+            <!-- 로그인/회원가입 -->
+        <nav>
+            <ul class="lnb">
+                <li><a href="mb_login.html" title="로그인바로가기">로그인</a></li>
+                <li>&#47;</li>
+                <li><a href="mlogin.html" title="회원가입바로가기">회원가입</a></li>
+            </ul>
+        </nav>
+            
+            <!-- 검색폼 -->
+            <fieldset>
+                <legend>검색폼</legend>
+                    <input type="text"  id="search" placeholder="검색어를 입력하세요" maxlength="50" autofocus>
+                    <label for="search" class="fas fa-search">
+                        <!-- <span>검색버튼</span> -->
+                    </label>                
+            </fieldset>
+
+
+            
+            <!-- 헤더 높이 지나면 헤더 배경색 흰색 -->
+            <script>
+                const header = document.getElementById('header');
+                const headerHeight = header.getBoundingClientRect().height;//getBoundingClientRect: 헤더의 높이를 찾아라
+
+                window.addEventListener("scroll",() =>{
+                    if(window.scrollY > headerHeight){
+                        header.setAttribute('style','background:rgba(255,255,255,0.9)');//setAttribute: 속성의 값을 바꿔라
+                    }else{
+                        header.setAttribute('style','background:rgba(0,0,0,0.2)');
+
+                    }
+                });
+            </script>
+
+            <!-- gnb -->
+           
+            <ul class="gnb">
+                <li>
+                    <div class="flex">
+                        <a href="intro.html" title="제주야놀자">제주야놀자</a>
+                        <i id="d1" class="fas fa-angle-down"></i>
+                    </div>
+                    <p>&nbsp;</p>
+                    <ul class="sub">
+                        <li><a href="#" title="산/바다">산/바다</a></li>
+                        <li><a href="#" title="계절">계절</a></li>
+                        <li><a href="#" title="동서남북">동서남북</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="flex">
+                        <a href="jejufood.html" title="제주의 맛">제주의맛</a>
+                        <i id="d2" class="fas fa-angle-down"></i>
+                    </div>
+                    <p>&nbsp;</p>
+                    <ul class="sub">
+                        <li><a href="#" title="한식">한식</a></li>
+                        <li><a href="#" title="중식">중식</a></li>
+                        <li><a href="#" title="일식">일식</a></li>
+                        <li><a href="#" title="양식">양식</a></li>
+                        <li><a href="#" title="해산물">해산물</a></li>
+                        <li><a href="#" title="카페">카페</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="flex">
+                        <a href="recommend.html" title="여행추천">여행추천</a>
+                        <i id="d3" class="fas fa-angle-down"></i>
+                    </div>
+                    <p>&nbsp;</p>
+                    <ul class="sub">
+                        <li><a href="#" title="테마여행">테마여행</a></li>
+                        <li><a href="#" title="심리테스트">심리테스트</a></li>
+                        <li><a href="#" title="일정여행">일정여행</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="flex">
+                        <a href="activity.html" title="놀거리">놀거리</a>
+                        <i id="d4" class="fas fa-angle-down"></i>
+                    </div>
+                    <p>&nbsp;</p>
+                    <ul class="sub">
+                        <li><a href="#" title="승마">승마</a></li>
+                        <li><a href="#" title="해녀체험">해녀체험</a></li>
+                        <li><a href="#" title="감귤따기">감귤따기</a></li>
+                        <li><a href="#" title="레일바이크">레일바이크</a></li>
+                        <li><a href="#" title="서핑/카약">서핑/카약</a></li>
+                        <li><a href="#" title="미로체험">미로체험</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="flex">
+                        <a href="unesco.html" title="문화유산">문화유산</a>
+                        <i id="d5" class="fas fa-angle-down"></i>
+                    </div>
+                    <p>&nbsp;</p>
+                    <ul class="sub">
+                        <li><a href="#" title="유네스코 3관왕">유네스코 3관왕</a></li>
+                        <li><a href="#" title="세계자연유산">세계자연유산</a></li>
+                        <li><a href="#" title="세계지질공원">세계지질공원</a></li>
+                        <li><a href="#" title="생물권보전지역">생물권보전지역</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+      
+        <!-- gnb 제이쿼리 -->
+        <script>
+            $(document).ready(function(){
+
+                $('header> .toggle').click(function(){ 
+                    
+                    $('#search').focus();
+                    $('nav.navi').fadeIn(250);
+                    $(this).fadeOut(250);
+                    $('.sub').css('display','none');
+                    $('h1').css('background','#fff');
+                });
+                            
+                $('.flex > a').click(function(){
+                    return false;  
+                });          
+                                
+                
+
+                $('.navi>i.fa-times').click(function(){
+                    $('#search').focus();
+
+                    $('nav.navi').fadeOut(250);
+                    $('header> .toggle').fadeIn(250); 
+                    $('h1').css('background','transparent')
+                });
+
+                $('#d1').click(function(){
+                    
+                    $('.gnb>li:first-child .sub').slideDown(250);
+                    if( 
+                    $(this).hasClass('fa-angle-down')==true){
+                        $(this).attr('class','fas fa-angle-up')
+                    }else(
+                        $('.gnb>li:first-child .sub').slideUp(250),
+                        $(this).attr('class','fas fa-angle-down')
+                    )
+                });
+                $('#d2').click(function(){
+                    $('.gnb>li:nth-child(2) .sub').slideDown(250);
+                    if( 
+                    $(this).hasClass('fa-angle-down')==true){
+                        $(this).attr('class','fas fa-angle-up')
+                    }else(
+                        $('.gnb>li:nth-child(2) .sub').slideUp(250),
+                        $(this).attr('class','fas fa-angle-down')
+                    )
+                });
+                $('#d3').click(function(){
+                    $('.gnb>li:nth-child(3) .sub').slideDown(250);
+                    if( 
+                        $(this).hasClass('fa-angle-down')==true){
+                            $(this).attr('class','fas fa-angle-up')
+                        }else(
+                            $('.gnb>li:nth-child(3) .sub').slideUp(250),
+                            $(this).attr('class','fas fa-angle-down')
+                        )
+                });
+                $('#d4').click(function(){
+                    $('.gnb>li:nth-child(4) .sub').slideDown(250);
+                    if( 
+                        $(this).hasClass('fa-angle-down')==true){
+                            $(this).attr('class','fas fa-angle-up')
+                        }else(
+                            $('.gnb>li:nth-child(4) .sub').slideUp(250),
+                            $(this).attr('class','fas fa-angle-down')
+                        )
+                });
+                $('#d5').click(function(){
+                    $('.gnb>li:last-child .sub').slideDown(250);
+                    if( 
+                    $(this).hasClass('fa-angle-down')==true){
+                        $(this).attr('class','fas fa-angle-up')
+                    }else(
+                        $('.gnb>li:last-child .sub').slideUp(250),
+                        $(this).attr('class','fas fa-angle-down')
+                    )
+                });
+            });
+        </script>
+    </header>
+
+    <!-- 메인영역 시작 -->
+    <main>
+        <!-- 메인1. 비디오 -->
+        <article class="main_vid">
+            <h2>메인비디오</h2>
+            <video id="vid" src="./video/main1_vid.mp4" autoplay loop muted playsinline></video>
+                <!-- <track kind="captions" src="./caption/main1_subtitle.vtt" srclang="ko" label="jejuvid" default> -->
+                <!-- <strong> "이 브라우저는 video 태그를 지원하지 않습니다."</strong>
+            <i class="fa-solid fa-pause"></i> -->
+        </article>  
+        <script>
+            $(document).ready(function(){
+
+            const toggle_btn = $('i.fa-pause');
+               toggle_btn.click(function(){
+                    if($(this).hasClass('fa-solid fa-pause')==true){
+                        $('#vid').get(0).pause();
+                        $(this).attr('class','fa-solid fa-play');
+                    }else{
+                        $('#vid').get(0).play();
+                        $(this).attr('class','fa-solid fa-pause');
+                    }
+                });
+               
+            });
+        </script>
+
+
+        <!-- 메인2. 올레길추천 -->
+        <section class="olle_recommend">
+            <h2>올레길 추천코스</h2>
+            <article class="olle_wrap">
+                <!-- <img class="cat" src="./images/main2_bg.png" alt="고양이 발바닥"> -->
+                <div id="main2_person_img">
+                    <ul class="main2_person_wrap">
+                        <li id="p1">
+                            <img src="./images/main2_person_l.png" alt="사람발자국">
+                        </li>
+                        <li id="p2">
+                            <img src="./images/main2_person_r.png" alt="사람발자국">
+                        </li>
+                        <li id="p3">
+                            <img src="./images/main2_person_l.png" alt="사람발자국">
+                        </li>
+                        <li id="p4">
+                            <img src="./images/main2_person_r.png" alt="사람발자국">
+                        </li>
+                        <li id="p5">
+                            <img src="./images/main2_person_l.png" alt="사람발자국">
+                        </li>
+                        <li id="p6">
+                            <img src="./images/main2_person_r.png" alt="사람발자국">
+                        </li>
+                    </ul>   
+
+                     <!-- 제이쿼리 UI라이브러리 -->
+                    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+                    <!-- 고양이발자국 제이쿼리 -->
+                    <script>
+                        $(document).ready(function(){
+                            function catfoot(){
+                                $('#p1').animate({'opacity':'0'},1100,).animate({'opacity':'1'},6000);
+                                $('#p2').animate({'opacity':'0'},2000).animate({'opacity':'1'},5000);
+                                $('#p3').animate({'opacity':'0'},3000).animate({'opacity':'1'},4000);
+                                $('#p4').animate({'opacity':'0'},4000).animate({'opacity':'1'},3000);
+                                $('#p5').animate({'opacity':'0'},5000).animate({'opacity':'1'},2000);
+                                $('#p6').animate({'opacity':'0'},6000).animate({'opacity':'1'},1000);
+                            }
+                           
+                        let Timer = setInterval(catfoot,0);
+                            
+                        });
+                    </script>
+                </div>
+
+                <h2>나는 걷기<br>
+                    <select name="olle" id="olle" onchange="olle(this.value)">
+                        <option value="1">초보여행자</option>
+                        <option value="2">중급여행자</option>
+                        <option value="3">상급여행자</option>
+                    </select>
+                    입니다.
+                </h2>
+
+                <img class="hanlabong jello-horizontal" src="./images/ico_main2_hanlabong.png" alt="한라봉">
+
+                <!-- 초급 -->
+                <div class="wrapper hacos" id="1">
+                    <p class="cos">첫걸음의 시작,<br>
+                    쉬운 코스부터<br>
+                    시작해보세요
+                    </p>
+                    <div class="swiper-container ollecos">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./images/main2_ha01.png" alt="올레 초보자 코스1"></div>
+                            <div class="swiper-slide"><img src="./images/main2_ha02.png" alt="올레 초보자 코스2"></div>
+                            <div class="swiper-slide"><img src="./images/main2_ha03.png" alt="올레 초보자 코스3"></div>
+                            <div class="swiper-slide"><img src="./images/main2_ha04.png" alt="올레 초보자 코스4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 중급 -->
+                <div class="wrapper jungcos" id="2" style="display:none">
+                    <p class="cos">걷기 여행에<br> 익숙해졌다면<br> 이젠<br> 즐겨볼까요?</p>
+                    <div class="swiper-container ollecos">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./images/main2_jung01.png" alt="올레 중급자 코스1"></div>
+                            <div class="swiper-slide"><img src="./images/main2_jung02.png" alt="올레 중급자 코스2"></div>
+                            <div class="swiper-slide"><img src="./images/main2_jung03.png" alt="올레 중급자 코스3"></div>
+                            <div class="swiper-slide"><img src="./images/main2_jung04.png" alt="올레 중급자 코스4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 고급 -->
+                <div class="wrapper sangcos" id="3" style="display:none">
+                    <p class="cos">도전해볼까요?<br> 난이도<br> 어려움 코스</p>
+                    <div class="swiper-container ollecos">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./images/main2_sang01.png" alt="올레 숙련자 코스1"></div>
+                            <div class="swiper-slide"><img src="./images/main2_sang02.png" alt="올레 숙련자 코스1"></div>
+                            <div class="swiper-slide"><img src="./images/main2_sang03.png" alt="올레 숙련자 코스1"></div>
+                            <div class="swiper-slide"><img src="./images/main2_sang04.png" alt="올레 숙련자 코스1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    let swiper = new Swiper('.ollecos', {
+                    centeredSlides: false,
+                    slidesPerView: '1.5',
+                    loop: true,
+                    
+                    autoplay: {
+                    delay: 2000,
+                        },
+                    });
+                </script>
+            </article>
+        </section>  
+        <!-- 올레길 스와이퍼 슬라이드 서식 -->
+        <script>
+            function olle(value){
+                for(q=1; q<=3 ;q++){
+                document.getElementById(q).style.display="none";//모두 안보이게
+                }
+                document.getElementById(value).style.display="block";//id 선택시 보이게
+            }
+        </script>
+
+        <!--메인3. 축제, 공연/전시 영역 시작 -->
+        <section class="fst_cst">
+            <h2>축제/공연전시</h2>
+            <img class="circle" src="./images/main3_bg_circle.png" alt="">
+            <img class="wave" src="./images/main3_bg_wave.png" alt="">
+            <article class="fst_cst_title">
+                <h3>제주에서 즐기자!</h3>
+                <p>다양한 행사</p>
+                <input type="checkbox" id="festi" name="d">
+                <label for="festi">축제</label>
+                
+                <input type="checkbox" id="concert" name="d">
+                <label for="concert">공연/전시</label>
+            
+                <div class="fst_cst_wrap">
+                    <div class="fst_wrap">
+                        <ul class="festi_list">
+                            <li>
+                                <a href="#" title="구팔일바로가기">
+                                    <img src="./images/main3_fstv01.jpg" alt="구팔일축제">
+                                    <p class="t01">구팔일 올데이 페스티벌</p>
+                                    <p class="d01">2023. 04. 29 - 08. 28</p>
+                                    <p class="w01">(매주 토요일)</p>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="#" title="서복바로가기">
+                                    <img src="./images/main3_fstv02.jpg" alt="서복축제">
+                                    <p class="t01">서복은 처음이지?</p>
+                                    <p class="d01">2023. 06. 17</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="festi_list2">
+                            <li>
+                                <a href="#" title="filter바로가기">
+                                    <img src="./images/main3_fstv03.jpg" alt="FILTER fESTIVAL">
+                                    <p class="t01">FILTER FESTIVAL</p>
+                                    <p class="d01">2023. 07. 08 - 07.30</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="제주올레바로가기">
+                                    <img src="./images/main3_fstv04.jpg" alt="구팔일축제">
+                                    <p class="t01">2023 제주올레 걷기축제</p>
+                                    <p class="d01">2023. 11. 02 - 11. 04</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> 
+                    <!-- //fst_cst_wrap .end -->
+
+                    <div class="cst_wrap">
+                        <!-- 콘서트 리스트 -->
+                        <ul class="concert_list">
+                            <li>
+                                <a href="#" title="귤림풍악바로가기">
+                                    <img src="./images/main3_cst01.jpg" alt="귤림풍악공연">
+                                    <p class="t01">귤림풍악</p>
+                                    <p class="d01">2023. 07. 29 - 10. 28</p>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="#" title="PERRERTONES바로가기">
+                                    <img src="./images/main3_cst02.jpg" alt="PERRERTONES공연">
+                                    <p class="t01">PERRERTONES</p>
+                                    <p class="d01">2023. 07. 29</p>
+                                </a> 
+                            </li>
+                        </ul>
+
+
+                        <ul class="concert_list2">
+                            <li>       
+                                <a href="#" title="숨비소리바로가기">
+                                    <img src="./images/main3_cst04.jpg" alt="숨비소리공연">
+                                    <p class="t01">숨비소리</p>
+                                    <p class="d01">2023. 06. 20</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="대한민국연극제바로가기">
+                                    <img src="./images/main3_cst03.jpg" alt="대한민국연극제공연">
+                                    <p class="t01">대한민국연극제</p>
+                                    <p class="d01">2023. 06. 15 - 07. 03</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 축제-공연전시 스크립트 -->
+        <script>
+            
+            $(document).ready(function(){
+
+                $('label[for=festi]').click(function(){
+                    
+                    $(this).css({
+                        'color':'orange'
+                    });
+                    $('label[for=concert]').css('color','#333')
+                    $('.cst_wrap').css('display','none')
+                    $('.fst_wrap').css('display','block')
+
+                });
+
+
+                $('label[for=concert]').click(function(){
+                    
+                    $(this).css({
+                        'color':'orange'
+                    });
+                    $('label[for=festi]').css('color','#333')
+                    $('.fst_wrap').css('display','none')
+                    $('.cst_wrap').css('display','block')
+                    
+                });
+            });
+        </script>
+
+        <!--메인4. 동서남북 추천여행코스 영역 시작 -->
+        <section class="news">
+            <h2>동서남북 추천 여행코스</h2>
+            <article class="news_article">
+                <h2>
+                    <i class="fa-solid fa-compass"></i> 동서남북<br>
+                    <span class="green">추천여행코스</span>
+                </h2>
+                <div class="line">&nbsp;</div>
+
+                <ul class="news_list">
+                    <li class="dong01">동</li>
+                    <li class="su01">서</li>
+                    <li class="nam01">남</li>
+                    <li class="buk01">북</li>
+                </ul>
+                
+                
+
+                <div class="map_img" id="map_img">
+                    <ul class="main4_cat_wrap">
+                        <li id="c1">
+                            <img src="./images/main4_cat01.png" alt="고양이발자국">
+                        </li>
+                        <li id="c2">
+                            <img src="./images/main4_cat02.png" alt="고양이발자국">
+                        </li>
+                        <li id="c3">
+                            <img src="./images/main4_cat03.png" alt="고양이발자국">
+                        </li>
+                        <li id="c4">
+                            <img src="./images/main4_cat04.png" alt="고양이발자국">
+                        </li>
+                        <li id="c5">
+                            <img src="./images/main4_cat05.png" alt="고양이발자국">
+                        </li>
+                        <li id="c6">
+                            <img src="./images/main4_cat06.png" alt="고양이발자국">
+                        </li>
+                    </ul>   
+
+                    
+                    <!-- 고양이발자국 제이쿼리 -->
+                    <script>
+                        $(document).ready(function(){
+                            function catfoot(){
+                                $('#c1').animate({'opacity':'0'},1100,).animate({'opacity':'1'},6000);
+                                $('#c2').animate({'opacity':'0'},2000).animate({'opacity':'1'},5000);
+                                $('#c3').animate({'opacity':'0'},3000).animate({'opacity':'1'},4000);
+                                $('#c4').animate({'opacity':'0'},4000).animate({'opacity':'1'},3000);
+                                $('#c5').animate({'opacity':'0'},5000).animate({'opacity':'1'},2000);
+                                $('#c6').animate({'opacity':'0'},6000).animate({'opacity':'1'},1000);
+                            }
+                           
+                        let Timer = setInterval(catfoot,0);
+                            
+                        });
+                    </script>
+     
+                    <div class="dong_map">
+                        <img class="dong2" src="./images/main4_dong.png" alt="동쪽지도">
+                        <div class="ping_wrap">
+                            <img class="ping" src="./images/main4_navi_ico.png" alt="위치 아이콘">
+                        </div>
+                    </div>
+
+                    <div class="su_map">
+                        <img class="su2" src="./images/main4_su.png" alt="서쪽지도">
+                        <div class="ping_wrap">
+                            <img class="ping" src="./images/main4_navi_ico.png" alt="위치 아이콘">
+                        </div>
+                    </div>
+
+                    <div class="nam_map">
+                        <img class="nam2" src="./images/main4_nam.png" alt="남쪽지도">
+                        <div class="ping_wrap">
+                            <img class="ping" src="./images/main4_navi_ico.png" alt="위치 아이콘">
+                        </div>
+                    </div>
+
+                    <div class="buk_map">
+                        <img class="buk2" src="./images/main4_buk.png" alt="북쪽지도">
+                        <div class="ping_wrap">
+                            <img class="ping" src="./images/main4_navi_ico.png" alt="위치 아이콘">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 동 -->
+                <div class="dong3">
+                    <ul class="dong04">
+                        <li>
+                            <a href="#" title="김녕해수욕장 바로가기"><img id="dong05" src="./images/main4_dong01.jpg" alt="김녕해수욕장">
+                            </a>
+                        </li>
+                        <li class="news_p">
+                            <p class="buk_t1 t1">김녕해수욕장</p>
+                            <div class="page">
+                                <i class="fas fa-angle-left" id="l_btn"></i>
+                                <span id="page_n">&nbsp;</span>
+                                <i class="fas fa-angle-right" id="r_btn"></i>
+                            </div>
+                        </li>
+                        <li class="buk_eg1 eg1">Kimnyoung</li>
+                        <li class="buk_info1 info1">하늘에서 바라본 모습이 한문 평(平) 자를 이룬 모양을 하고 있어 ‘김녕’이라고 불리는 김녕해수욕장은 하얀 모래에 부서지는 파도들이 시원한 소리를 내고, 코발트빛 바다 풍경이 제주 자연의 아름다움을 새삼 느끼게 해주는 곳이다. 해변가를 걷다 보면 제주의 바람으로 돌아가는 김녕풍력발전기들을 관찰할 수 있다. 인근에는 갓돔과 노래미 돔이 잘 잡히는 갯바위 낚시터가 낚시꾼들에게 인기 명소이며, 용천동굴, 당처물 동굴, 만장굴 등 다양한 굴이 근처에 위치해 있어 여름에 시원하게 피서를 즐길 수 있다. 김녕해수욕장은 특이한 지형으로 인해 지질트레일도 조성이 되어 있는데, 지질트레일은 유네스코 세계지질공원을 활용해 각 지역의 지질자원과 마을의 역사 및 문화와 어울려진 도보길이다.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 서 -->
+                <div class="su3">
+                    <ul class="su04">
+                        <li>
+                            <a href="#" title="금악오름 바로가기"><img id="su05" src="./images/main4_su01.jpg" alt="금악오름">
+                            </a>
+                        </li>
+                        <li class="news_p">
+                            <p class="buk_t2 t1"> 금악오름 </p>
+                            <div class="page">
+                                <i class="fas fa-angle-left" id="l_btn2"></i>
+                                <span id="page_n2">&nbsp;</span>
+                                <i class="fas fa-angle-right" id="r_btn2"></i>
+                            </div>
+                        </li>
+                        <li class="buk_eg2 eg1">Geumag</li>
+                        <li class="buk_info2 info1">금악오름은 비교적 평탄한 지형에 분화구를 중심으로 남북으로 높은 두 개의 봉우리가 있다. 산정화구호가 있는 몇 안되는 오름 중 하나이다. 해발고도는 428m지만, 비고는 178m밖에 않아 금방 오를 수 있다. 분화구 둘레는 1.2km나 되어 제주의 풍경을 즐기며 산책하기 좋다. 정상에서는 한라산, 비양도, 금악마을, 돼지농장, 블랙스톤 골프장 등이 보인다. 파란 바다와 푸른 초원, 그 위로 풀을 뜯고 있는 말들의 목가적인 풍경에서 평화로움을 만끽할 수 있다.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 남 -->
+                <div class="nam3">
+                    <ul class="nam04">
+                        <li>
+                            <a href="#" title="동백포레스트 바로가기"><img id="nam05" src="./images/main4_nam01.jpg" alt="동백포레스트">
+                            </a>
+                        </li>
+                        <li class="news_p">
+                            <p class="buk_t3 t1">동백포레스트</p>
+                            <div class="page">
+                                <i class="fas fa-angle-left" id="l_btn3"></i>
+                                <span id="page_n3">&nbsp;</span>
+                                <i class="fas fa-angle-right" id="r_btn3"></i>
+                            </div>
+                        </li>
+                        <li class="buk_eg3 eg1">Dongbaek Forest</li>
+                        <li class="buk_info3 info1">제주 동백꽃 명소인 동백포레스트는 동글동글한 애기동백나무가 심어져 있는 동백 군락지이며, 화려하게 피어난 동백꽃과 군락지를 둘러싼 돌담 그리고 나무 주변에 의자가 배치되어 있어 사진찍기에 좋다. 동백나무 주위로 조성된 산책로를 따라 올라가면 동백군락지의 전경을 내려다 볼 수 있고 애기동백꽃은 12월 말부터 1월 사이 만개해 절정에 이른다.
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <!-- 북 -->
+                <div class="buk3">
+                    <ul class="buk04">
+                        <li>
+                            <a href="#" title="물찻오름 바로가기">
+                                <img id="buk05" src="./images/main4_buk01.jpg" alt="물찻오름">
+                            </a>
+                        </li>
+                        <li class="news_p">
+                            <p class="buk_t4 t1">물찻오름</p>
+                            <div class="page">
+                                <i class="fas fa-angle-left" id="l_btn4"></i>
+                                <span id="page_n4">&nbsp;</span>
+                                <i class="fas fa-angle-right" id="r_btn4"></i>
+                            </div>
+                        </li>
+                        <li class="buk_eg4 eg1">Mulchatoreum</li>
+                        <li class="buk_info4 info1"> 사려니숲 축제 기간 중에만 한시적으로 개방되는 물찻오름은 제주의 기생 화산 중 몇 안 되는 산정화구호로, 물이 연중 넘실거리며 오름 전체 비탈면은 꽝꽝나무, 단풍나무 등이 빽빽이 들어선 울창한 자연림으로 이루어져 있다. 동쪽 벼랑 밑에는 복수초 군락이 형성되어 있고 그 밑에는 특정야생동식물로 지정된 관중을 비롯해 무늬천남성, 백작약 등이 자생하고 있다. 또한 분화구 주변에는 세모고랭이 등 여러 습지 식물이 분포하고 있다.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        
+        <!-- 동서남북 글자클릭 제이쿼리 -->
+        <script>
+            $(document).ready(function(){
+                //동 클릭
+                $('.dong01').click(function(){
+                    let n=1;
+                    document.getElementById('page_n').innerHTML='<strong>'+n+'</strong>/5';
+                    document.getElementById('dong05').src='./images/main4_dong0'+n+'.jpg';
+
+                    $('.dong_map').css('display','block');
+                    $('.dong3').css('display','block');
+                    $('.dong01').css({
+                        'color':'#fff',
+                        'background':'#0B570E'
+                    });
+
+                    $('.su_map').css('display','none');
+                    $('.su3').css('display','none');
+                    $('.su01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+
+                    $('.nam_map').css('display','none');
+                    $('.nam3').css('display','none');
+                    $('.nam01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+                    
+                    $('.buk_map').css('display','none');
+                    $('.buk3').css('display','none');
+                    $('.buk01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+                });
+
+                //서 클릭
+                $('.su01').click(function(){
+                    let m = 1;
+                    document.getElementById('page_n2').innerHTML='<strong>'+m+'</strong>/5';
+                    document.getElementById('su05').src='./images/main4_su0'+m+'.jpg';
+
+                    $('.su_map').css('display','block');
+                    $('.su3').css('display','block');
+                    $('.su01').css({
+                        'color':'#fff',
+                        'background':'#0B570E'
+                    });
+
+                    $('.dong_map').css('display','none');
+                    $('.dong3').css('display','none');
+                    $('.dong01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+
+                    $('.nam_map').css('display','none');
+                    $('.nam3').css('display','none');
+                    $('.nam01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+                    
+                    $('.buk_map').css('display','none');
+                    $('.buk3').css('display','none');
+                    $('.buk01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+                });
+
+                //남 클릭
+                $('.nam01').click(function(){
+                    let o = 1;
+                    document.getElementById('page_n3').innerHTML='<strong>'+o+'</strong>/5';
+                    document.getElementById('nam05').src='./images/main4_nam0'+o+'.jpg';
+                    $('.nam_map').css('display','block');
+                    $('.nam3').css('display','block');
+                    $('.nam01').css({
+                        'color':'#fff',
+                        'background':'#0B570E'
+                    });
+
+                    $('.dong_map').css('display','none');
+                    $('.dong3').css('display','none');
+                    $('.dong01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+
+                    $('.su_map').css('display','none');
+                    $('.su3').css('display','none');
+                    $('.su01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+                    
+                    $('.buk_map').css('display','none');
+                    $('.buk3').css('display','none');
+                    $('.buk01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+                });
+
+                //북
+                $('.buk01').click(function(){
+                    let p = 1;
+                    document.getElementById('page_n4').innerHTML='<strong>'+p+'</strong>/5';
+                    document.getElementById('buk05').src='./images/main4_buk0'+p+'.jpg';
+                    $('.buk_map').css('display','block');
+                    $('.buk3').css('display','block');
+                    $('.buk01').css({
+                        'color':'#fff',
+                        'background':'#0B570E'
+                    });
+
+                    $('.dong_map').css('display','none');
+                    $('.dong3').css('display','none');
+                    $('.dong01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+
+                    $('.su_map').css('display','none');
+                    $('.su3').css('display','none');
+                    $('.su01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    });
+                    
+                    $('.nam_map').css('display','none');
+                    $('.nam3').css('display','none');
+                    $('.nam01').css({
+                        'color':'#333',
+                        'background':'#fff'
+                    })
+                });
+            });
+        </script>
+
+        <!-- 동서남북 관광지 사진 스크립트 -->
+        <script>
+        //동
+            let n = 1;
+            const l_btn = document.getElementById('l_btn');
+            const r_btn = document.getElementById('r_btn');
+
+            document.getElementById('page_n').innerHTML='<strong>'+n+'</strong>/5';
+            
+
+
+            l_btn.addEventListener('click',function(){
+                if(n==1){
+                    n=5;
+                }else{
+                    n--;
+                }
+                document.getElementById('page_n').innerHTML='<strong>'+n+'</strong>/5';
+                document.getElementById('dong05').src='./images/main4_dong0'+n+'.jpg';
+
+                if(n==1){
+                    document.querySelector('.buk_t1').innerHTML='<p>김녕해수욕장</p>';
+                    document.querySelector('.buk_eg1').innerHTML='<li>Kimnyoung</li>';
+                    document.querySelector('.buk_info1').innerHTML='<li>하늘에서 바라본 모습이 한문 평(平) 자를 이룬 모양을 하고 있어 ‘김녕’이라고 불리는 김녕해수욕장은 하얀 모래에 부서지는 파도들이 시원한 소리를 내고, 코발트빛 바다 풍경이 제주 자연의 아름다움을 새삼 느끼게 해주는 곳이다. 해변가를 걷다 보면 제주의 바람으로 돌아가는 김녕풍력발전기들을 관찰할 수 있다. 인근에는 갓돔과 노래미 돔이 잘 잡히는 갯바위 낚시터가 낚시꾼들에게 인기 명소이며, 용천동굴, 당처물 동굴, 만장굴 등 다양한 굴이 근처에 위치해 있어 여름에 시원하게 피서를 즐길 수 있다. 김녕해수욕장은 특이한 지형으로 인해 지질트레일도 조성이 되어 있는데, 지질트레일은 유네스코 세계지질공원을 활용해 각 지역의 지질자원과 마을의 역사 및 문화와 어울려진 도보길이다.</li>';
+                    document.querySelector('.dong_map> .ping_wrap').style='top: -40px;right: 75px';
+
+                }else if(n==2){
+                    document.querySelector('.buk_t1').innerHTML='<p>따라비오름</p>';
+                    document.querySelector('.buk_eg1').innerHTML='<li>Darabi</li>';
+                    document.querySelector('.buk_info1').innerHTML='<li>따라비오름은 3개의 분화구(굼부리)와 6개의 봉우리로 이루어져 있다. 화산이 폭발할 때 분출된 용암은 부드러운 산세를 만들어냈고, 가을이면 오름을 뒤덮은 억새 군락이 장관을 이룬다. 이런 풍경에 취한 사람들은 따라비오름을 ‘오름의 여왕’이라 부르기 시작했다. 억새는 오름 초입부터 화려함을 뽐낸다. 넓은 평원은 바람에 흐드러진 하얀 억새풀로 채워지고 그 사이로 아늑한 오솔길이 놓였다. 따라비오름 정상까지는 30분 정도 소요되며 누구나 쉽게 탐방할 수 있다. 계단길을 따라 오르는 사이 잠시 가려졌던 시야는 산정에 도착하는 순간 경이로움으로 활짝 트인다. 굼부리와 능선은 감미로운 곡선을 이루고 수많은 억새 솜털 뒤로 큰사슴이오름(대록산)과 풍력발전단지가 햇살 아래 펼쳐진다.</li>';
+                    document.querySelector('.dong_map> .ping_wrap').style='top: 50px;right: 75px';
+
+                
+                }else if(n==3){
+                    document.querySelector('.buk_t1').innerHTML='<p>용눈이오름</p>';
+                    document.querySelector('.buk_eg1').innerHTML='<li>Yongnuni</li>';
+                    document.querySelector('.buk_info1').innerHTML='<li>용눈이 오름은 360여개의 오름들 중 유일하게 분화구가 3개이다. 봄, 여름에는 잔디가 가을, 겨울에는 억새가 덮이며 계절마다 옷을 갈아입는다. 인체의 곡선처럼 부드러운 능선이 유독 아름다워 많은 사진 작가들이 찾는다. 용눈이오름은 다른 오름과 달리 세 개의 능선으로 이어져 전체적으로 부드럽다는 인상이 강하다. 15분이면 정상에 오르며, 경사도가 완만해서 남녀노소 누구나 걷기에 편하다. 위치 상 동쪽 끝에 있어서 좋은 날씨에는 멀리 성산일출봉과 우도까지 전망이 가능하며 주변의 다랑쉬오름과 지미봉도 볼 수 있다. 억새가 피는 가을에는 스몰 웨딩 사진 촬영지로도 잘 알려져 있다.</li>';
+                    document.querySelector('.dong_map> .ping_wrap').style='top: 20px;right: 75px';
+
+                }else if(n==4){
+                    document.querySelector('.buk_t1').innerHTML='<p>성산일출봉</p>';
+                    document.querySelector('.buk_eg1').innerHTML='<li>Seongsan Ilchulbong</li>';
+                    document.querySelector('.buk_info1').innerHTML='<li>성산일출봉은 바다위에 우뚝 솟아난 수성화산·유네스코 세계자연유산, 천연기념물 제420호이다. 생성 당시엔 제주 본토와 떨어진 섬이었는데, 주변에 모래와 자갈등이 쌓이면서 간조 때면 본토와 이어지는 길이 생겼고, 1940년엔 이곳에 도로가 생기면서 현재는 육지와 완벽하게 연결되어 있다.정상에서는 너른 분화구와 그 뒤로 펼쳐지는 바다의 풍경은, 제주의 다른 오름과는 전혀 다른 웅장한 느낌을 준다. 예부터 이곳 정상에서 바라보는 일출광경은 영주10경(제주의 경승지)중에서 으뜸이라 하였고, 이에 매년 12월 31일에는 성산일출축제가 열린다.</li>';
+                    document.querySelector('.dong_map> .ping_wrap').style='top: 15px;right: -3px';
+
+                }
+                else{
+                    document.querySelector('.buk_t1').innerHTML='<p>섭지코지</p>';
+                    document.querySelector('.buk_eg1').innerHTML='<li>Seopjikoji</li>';
+                    document.querySelector('.buk_info1').innerHTML='<li>제주 동부 해안에 볼록 튀어나온 섭지코지는 성산 일출봉을 배경으로한 해안 풍경이 일품이다. 들머리의 신양해변백사장, 끝머리 언덕위 평원에 드리워진 유채밭, 여유롭게 풀을 뜯는 제주조랑말들, 바위로 둘러친 해안절벽과 우뚝 치솟은 전설 어린 선바위 등은 전형적인 제주의 아름다움을 만날 수 있다. 특히 제주의 다른 해안과는 달리 송이라는 붉은 화산재로 되어 있고, 밀물과 썰물에 따라 물속에 잠겼다가 일어서는 기암괴석들은 어디에서도 볼 수 없는 자연의 수석 전시회를 연출한다.</li>';
+                    document.querySelector('.dong_map> .ping_wrap').style='top: 30px;right: 1px';
+
+                
+                };
+            });
+
+            r_btn.addEventListener('click',function(){
+                if(n==5){
+                n=1;
+            }else{
+                n++;
+            }
+            document.getElementById('page_n').innerHTML='<strong>'+n+'</strong>/5';
+            document.getElementById('dong05').src='./images/main4_dong0'+n+'.jpg';
+
+            if(n==1){
+                document.querySelector('.buk_t1').innerHTML='<p>김녕해수욕장</p>';
+                document.querySelector('.buk_eg1').innerHTML='<li>Kimnyoung</li>';
+                document.querySelector('.buk_info1').innerHTML='<li>하늘에서 바라본 모습이 한문 평(平) 자를 이룬 모양을 하고 있어 ‘김녕’이라고 불리는 김녕해수욕장은 하얀 모래에 부서지는 파도들이 시원한 소리를 내고, 코발트빛 바다 풍경이 제주 자연의 아름다움을 새삼 느끼게 해주는 곳이다. 해변가를 걷다 보면 제주의 바람으로 돌아가는 김녕풍력발전기들을 관찰할 수 있다. 인근에는 갓돔과 노래미 돔이 잘 잡히는 갯바위 낚시터가 낚시꾼들에게 인기 명소이며, 용천동굴, 당처물 동굴, 만장굴 등 다양한 굴이 근처에 위치해 있어 여름에 시원하게 피서를 즐길 수 있다. 김녕해수욕장은 특이한 지형으로 인해 지질트레일도 조성이 되어 있는데, 지질트레일은 유네스코 세계지질공원을 활용해 각 지역의 지질자원과 마을의 역사 및 문화와 어울려진 도보길이다.</li>';
+                document.querySelector('.dong_map> .ping_wrap').style='top: -40px;right: 75px';
+
+            }else if(n==2){
+                document.querySelector('.buk_t1').innerHTML='<p>따라비오름</p>';
+                document.querySelector('.buk_eg1').innerHTML='<li>Darabi</li>';
+                document.querySelector('.buk_info1').innerHTML='<li>따라비오름은 3개의 분화구(굼부리)와 6개의 봉우리로 이루어져 있다. 화산이 폭발할 때 분출된 용암은 부드러운 산세를 만들어냈고, 가을이면 오름을 뒤덮은 억새 군락이 장관을 이룬다. 이런 풍경에 취한 사람들은 따라비오름을 ‘오름의 여왕’이라 부르기 시작했다. 억새는 오름 초입부터 화려함을 뽐낸다. 넓은 평원은 바람에 흐드러진 하얀 억새풀로 채워지고 그 사이로 아늑한 오솔길이 놓였다. 따라비오름 정상까지는 30분 정도 소요되며 누구나 쉽게 탐방할 수 있다. 계단길을 따라 오르는 사이 잠시 가려졌던 시야는 산정에 도착하는 순간 경이로움으로 활짝 트인다. 굼부리와 능선은 감미로운 곡선을 이루고 수많은 억새 솜털 뒤로 큰사슴이오름(대록산)과 풍력발전단지가 햇살 아래 펼쳐진다.</li>';
+                document.querySelector('.dong_map> .ping_wrap').style='top: 50px;right: 75px';
+
+            
+            }else if(n==3){
+                document.querySelector('.buk_t1').innerHTML='<p>용눈이오름</p>';
+                document.querySelector('.buk_eg1').innerHTML='<li>Yongnuni</li>';
+                document.querySelector('.buk_info1').innerHTML='<li>용눈이 오름은 360여개의 오름들 중 유일하게 분화구가 3개이다. 봄, 여름에는 잔디가 가을, 겨울에는 억새가 덮이며 계절마다 옷을 갈아입는다. 인체의 곡선처럼 부드러운 능선이 유독 아름다워 많은 사진 작가들이 찾는다. 용눈이오름은 다른 오름과 달리 세 개의 능선으로 이어져 전체적으로 부드럽다는 인상이 강하다. 15분이면 정상에 오르며, 경사도가 완만해서 남녀노소 누구나 걷기에 편하다. 위치 상 동쪽 끝에 있어서 좋은 날씨에는 멀리 성산일출봉과 우도까지 전망이 가능하며 주변의 다랑쉬오름과 지미봉도 볼 수 있다. 억새가 피는 가을에는 스몰 웨딩 사진 촬영지로도 잘 알려져 있다.</li>';
+                document.querySelector('.dong_map> .ping_wrap').style='top: 20px;right: 75px';
+
+            }else if(n==4){
+                document.querySelector('.buk_t1').innerHTML='<p>성산일출봉</p>';
+                document.querySelector('.buk_eg1').innerHTML='<li>Seongsan Ilchulbong</li>';
+                document.querySelector('.buk_info1').innerHTML='<li>성산일출봉은 바다위에 우뚝 솟아난 수성화산·유네스코 세계자연유산, 천연기념물 제420호이다. 생성 당시엔 제주 본토와 떨어진 섬이었는데, 주변에 모래와 자갈등이 쌓이면서 간조 때면 본토와 이어지는 길이 생겼고, 1940년엔 이곳에 도로가 생기면서 현재는 육지와 완벽하게 연결되어 있다.정상에서는 너른 분화구와 그 뒤로 펼쳐지는 바다의 풍경은, 제주의 다른 오름과는 전혀 다른 웅장한 느낌을 준다. 예부터 이곳 정상에서 바라보는 일출광경은 영주10경(제주의 경승지)중에서 으뜸이라 하였고, 이에 매년 12월 31일에는 성산일출축제가 열린다.</li>';
+                document.querySelector('.dong_map> .ping_wrap').style='top: 15px;right: -3px';
+
+            }
+            else{
+                document.querySelector('.buk_t1').innerHTML='<p>섭지코지</p>';
+                document.querySelector('.buk_eg1').innerHTML='<li>Seopjikoji</li>';
+                document.querySelector('.buk_info1').innerHTML='<li>제주 동부 해안에 볼록 튀어나온 섭지코지는 성산 일출봉을 배경으로한 해안 풍경이 일품이다. 들머리의 신양해변백사장, 끝머리 언덕위 평원에 드리워진 유채밭, 여유롭게 풀을 뜯는 제주조랑말들, 바위로 둘러친 해안절벽과 우뚝 치솟은 전설 어린 선바위 등은 전형적인 제주의 아름다움을 만날 수 있다. 특히 제주의 다른 해안과는 달리 송이라는 붉은 화산재로 되어 있고, 밀물과 썰물에 따라 물속에 잠겼다가 일어서는 기암괴석들은 어디에서도 볼 수 없는 자연의 수석 전시회를 연출한다.</li>';
+                document.querySelector('.dong_map> .ping_wrap').style='top: 30px;right: 1px';
+
+            
+            };
+            });
+
+        //서
+        let m = 1;
+        const l_btn2 = document.getElementById('l_btn2');
+        const r_btn2 = document.getElementById('r_btn2');
+
+        document.getElementById('page_n2').innerHTML='<strong>'+m+'</strong>/5';
+
+        l_btn2.addEventListener('click',function(){
+            if(m==1){
+                m=5;
+            }else{
+                m--;
+            }
+            document.getElementById('page_n2').innerHTML='<strong>'+m+'</strong>/5';
+            document.getElementById('su05').src='./images/main4_su0'+m+'.jpg';
+
+            if(m==1){
+                document.querySelector('.buk_t2').innerHTML='<p>금악오름</p>';
+                document.querySelector('.buk_eg2').innerHTML='<li>Geumag</li>';
+                document.querySelector('.buk_info2').innerHTML='<li>금악오름은 비교적 평탄한 지형에 분화구를 중심으로 남북으로 높은 두 개의 봉우리가 있다. 산정화구호가 있는 몇 안되는 오름 중 하나이다. 해발고도는 428m지만, 비고는 178m밖에 않아 금방 오를 수 있다. 분화구 둘레는 1.2km나 되어 제주의 풍경을 즐기며 산책하기 좋다. 정상에서는 한라산, 비양도, 금악마을, 돼지농장, 블랙스톤 골프장 등이 보인다. 파란 바다와 푸른 초원, 그 위로 풀을 뜯고 있는 말들의 목가적인 풍경에서 평화로움을 만끽할 수 있다.</li>';
+                document.querySelector('.su_map> .ping_wrap').style='top: 70px;right: 290px';
+
+            }else if(m==2){
+                document.querySelector('.buk_t2').innerHTML='<p>오설록티뮤지엄</p>';
+                document.querySelector('.buk_eg2').innerHTML='<li>Osulloc Tea Museum</li>';
+                document.querySelector('.buk_info2').innerHTML='<li>오설록티뮤지엄은 국내외 차 관련 물품과 박물관이며, 푸른 녹차밭이 펼쳐지는 제주도 서광다원 입구에 위치하고 있다. 동서양 전통과 현대가 조화를 이룬 문화의 공간이자, 자연 친화적인 휴식공간으로, 건물 전체가 녹차잔을 형상화하여 만들어졌다. 녹차와 한국 전통 차 문화를 이해할 수 있는 학습 공간으로 설록차의 모든 것을 체험해 볼 수 있는 곳이다. 통유리 너머로 보이는 푸른 녹차밭이 마음을 편하게 만들어줘, 제주를 찾는 많은 관광객이 한번쯤은 들르는 명소가 되었다. 티 하우스에서는 티 마스터가 직접 볶은 따뜻한 차와 오설록 녹차로 만든 음료 아이스크림, 롤케익크 등을 즐길 수 있다.</li>';
+                document.querySelector('.su_map> .ping_wrap').style='top: 120px;right: 280px';
+
+            
+            }else if(m==3){
+                document.querySelector('.buk_t2').innerHTML='<p>협재해수욕장</p>';
+                document.querySelector('.buk_eg2').innerHTML='<li>Hyeopjae</li>';
+                document.querySelector('.buk_info2').innerHTML='<li>제주도 서쪽에 가볼만한 해수욕장을 꼽으라 하면 단연 1,2위로 꼽아 추천하는 곳이 협재해수욕장이다. 제주시 한림읍에 자리하며, 제주올레 14코스의 일부다. 금능해수욕장과 이웃하고 있는 쌍둥이해수욕장이기도 하다. 투명한 물에 에메랄드빛 물감을 서서히 풀어놓은 듯한 바다빛은 보는 것만으로도 힐링이 된다. 썰물 때면 조개껍질이 많이 섞인 은모래빛 백사장이 끝없이 이어진다.바다 앞에는 어린 왕자 속 보아뱀을 삼킨 코끼리 그림 모양의 ‘비양도’가 있다. 비양도와 바다 위로 떨어지는 석양은 이곳에서 놓칠 수 없는 또 하나의 장관이다. 여름에는 야간개장도 하니 야자나무 아래에서 제주도 푸른 밤을 만끽할 수 있다.</li>';
+                document.querySelector('.su_map> .ping_wrap').style='top: 30px;right: 300px';
+
+            }else if(m==4){
+                document.querySelector('.buk_t2').innerHTML='<p>성이시돌목장</p>';
+                document.querySelector('.buk_eg2').innerHTML='<li>Isidore Farm</li>';
+                document.querySelector('.buk_info2').innerHTML='<li>성이시돌 목장은 1954년 선교사로 제주에 온 맥그린치 신부가 황무지였던 목장 주변을 개간해 경작하고 새로운 농업 기술을 소개하며 생겨났다. 목장 안에는 우유부단이라는 이름의 카페에는 본 목장에서 나는 유기농 우유로 만든 아이스크림있다. 기념품 숍도 운영되고 있다. 기념품 숍에서는 미니어처 테쉬폰 제품과 목장에서 직접 만든 우유와 치즈 등을 구매할 수 있다.  목장내에서는 아름다운 경관과 독특한 건축물인 테쉬폰을 볼 수 있는데 이라크 바그다드 지역 인근 테쉬폰(Cteshphon)이라 불리는 곳에서 처음 건축 양식이 시작되어 건축물 이름이 테쉬폰이 되었다. 우리나라에서는 유일하게 성이시돌목장에만 있는 귀한 건축물이다.</li>';
+                document.querySelector('.su_map> .ping_wrap').style='top: 70px;right: 270px';
+                
+            }
+            else{
+                document.querySelector('.buk_t2').innerHTML='<p>수월봉</p>';
+                document.querySelector('.buk_eg2').innerHTML='<li>Suwolbong</li>';
+                document.querySelector('.buk_info2').innerHTML='<li>수월봉은 해발 77m 높이의 제주 서부지역 조망봉으로, 정상에서 바라보는 풍광은 가슴을 시원하게 해준다. 특히, 깎아 만든 듯한 수월봉 해안절벽은 동쪽으로 2km까지 이어져 있다. 이 해안절벽은 ‘엉알’이라 불리며, 벼랑 곳곳에는 샘물이 솟아올라 ‘녹고물’이라는 약수터로 널리 알려져 있다. 수월봉 아래쪽에는 해안선을 따라 지질트레일이 있다. 해안 절벽을 따라 화산 퇴적물이 쌓여 있는 모습의 장엄하기 이를 데 없다.수월정에 앉아서 차귀도로 떨어지는 낙조의 모습은 제주도에서 아름답기로 손꼽히는 일몰 중 하나이다.</li>';
+                document.querySelector('.su_map> .ping_wrap').style='top: 90px;right: 340px';
+            };
+        });
+
+        r_btn2.addEventListener('click',function(){
+            if(m==5){
+                m=1;
+        }else{
+            m++;
+        }
+        document.getElementById('page_n2').innerHTML='<strong>'+m+'</strong>/5';
+        document.getElementById('su05').src='./images/main4_su0'+m+'.jpg';
+
+        if(m==1){
+            document.querySelector('.buk_t2').innerHTML='<p>금악오름</p>';
+            document.querySelector('.buk_eg2').innerHTML='<li>Geumag</li>';
+            document.querySelector('.buk_info2').innerHTML='<li>금악오름은 비교적 평탄한 지형에 분화구를 중심으로 남북으로 높은 두 개의 봉우리가 있다. 산정화구호가 있는 몇 안되는 오름 중 하나이다. 해발고도는 428m지만, 비고는 178m밖에 않아 금방 오를 수 있다. 분화구 둘레는 1.2km나 되어 제주의 풍경을 즐기며 산책하기 좋다. 정상에서는 한라산, 비양도, 금악마을, 돼지농장, 블랙스톤 골프장 등이 보인다. 파란 바다와 푸른 초원, 그 위로 풀을 뜯고 있는 말들의 목가적인 풍경에서 평화로움을 만끽할 수 있다.</li>';
+            document.querySelector('.su_map> .ping_wrap').style='top: 70px;right: 290px';
+
+        }else if(m==2){
+            document.querySelector('.buk_t2').innerHTML='<p>오설록티뮤지엄</p>';
+            document.querySelector('.buk_eg2').innerHTML='<li>Osulloc Tea Museum</li>';
+            document.querySelector('.buk_info2').innerHTML='<li>오설록티뮤지엄은 국내외 차 관련 물품과 박물관이며, 푸른 녹차밭이 펼쳐지는 제주도 서광다원 입구에 위치하고 있다. 동서양 전통과 현대가 조화를 이룬 문화의 공간이자, 자연 친화적인 휴식공간으로, 건물 전체가 녹차잔을 형상화하여 만들어졌다. 녹차와 한국 전통 차 문화를 이해할 수 있는 학습 공간으로 설록차의 모든 것을 체험해 볼 수 있는 곳이다. 통유리 너머로 보이는 푸른 녹차밭이 마음을 편하게 만들어줘, 제주를 찾는 많은 관광객이 한번쯤은 들르는 명소가 되었다. 티 하우스에서는 티 마스터가 직접 볶은 따뜻한 차와 오설록 녹차로 만든 음료 아이스크림, 롤케익크 등을 즐길 수 있다.</li>';
+            document.querySelector('.su_map> .ping_wrap').style='top: 120px;right: 280px';
+
+        }else if(m==3){
+            document.querySelector('.buk_t2').innerHTML='<p>협재해수욕장</p>';
+            document.querySelector('.buk_eg2').innerHTML='<li>Hyeopjae</li>';
+            document.querySelector('.buk_info2').innerHTML='<li>제주도 서쪽에 가볼만한 해수욕장을 꼽으라 하면 단연 1,2위로 꼽아 추천하는 곳이 협재해수욕장이다. 제주시 한림읍에 자리하며, 제주올레 14코스의 일부다. 금능해수욕장과 이웃하고 있는 쌍둥이해수욕장이기도 하다. 투명한 물에 에메랄드빛 물감을 서서히 풀어놓은 듯한 바다빛은 보는 것만으로도 힐링이 된다. 썰물 때면 조개껍질이 많이 섞인 은모래빛 백사장이 끝없이 이어진다.바다 앞에는 어린 왕자 속 보아뱀을 삼킨 코끼리 그림 모양의 ‘비양도’가 있다. 비양도와 바다 위로 떨어지는 석양은 이곳에서 놓칠 수 없는 또 하나의 장관이다. 여름에는 야간개장도 하니 야자나무 아래에서 제주도 푸른 밤을 만끽할 수 있다.</li>';
+            document.querySelector('.su_map> .ping_wrap').style='top: 30px;right: 300px';
+
+        }else if(m==4){
+            document.querySelector('.buk_t2').innerHTML='<p>수월봉 </p>';
+            document.querySelector('.buk_eg2').innerHTML='<li>Suwolbong</li>';
+            document.querySelector('.buk_info2').innerHTML='<li>수월봉은 해발 77m 높이의 제주 서부지역 조망봉으로, 정상에서 바라보는 풍광은 가슴을 시원하게 해준다. 특히, 깎아 만든 듯한 수월봉 해안절벽은 동쪽으로 2km까지 이어져 있다. 이 해안절벽은 ‘엉알’이라 불리며, 벼랑 곳곳에는 샘물이 솟아올라 ‘녹고물’이라는 약수터로 널리 알려져 있다. 수월봉 아래쪽에는 해안선을 따라 지질트레일이 있다. 해안 절벽을 따라 화산 퇴적물이 쌓여 있는 모습의 장엄하기 이를 데 없다.수월정에 앉아서 차귀도로 떨어지는 낙조의 모습은 제주도에서 아름답기로 손꼽히는 일몰 중 하나이다.</li>';
+            document.querySelector('.su_map> .ping_wrap').style='top: 70px;right: 270px';
+        }
+        else{
+            document.querySelector('.buk_t2').innerHTML='<p>성이시돌목장</p>';
+            document.querySelector('.buk_eg2').innerHTML='<li>Isidore Farm</li>';
+            document.querySelector('.buk_info2').innerHTML='<li>성이시돌 목장은 1954년 선교사로 제주에 온 맥그린치 신부가 황무지였던 목장 주변을 개간해 경작하고 새로운 농업 기술을 소개하며 생겨났다. 목장 안에는 우유부단이라는 이름의 카페에는 본 목장에서 나는 유기농 우유로 만든 아이스크림있다. 기념품 숍도 운영되고 있다. 기념품 숍에서는 미니어처 테쉬폰 제품과 목장에서 직접 만든 우유와 치즈 등을 구매할 수 있다.  목장내에서는 아름다운 경관과 독특한 건축물인 테쉬폰을 볼 수 있는데 이라크 바그다드 지역 인근 테쉬폰(Cteshphon)이라 불리는 곳에서 처음 건축 양식이 시작되어 건축물 이름이 테쉬폰이 되었다. 우리나라에서는 유일하게 성이시돌목장에만 있는 귀한 건축물이다.</li>';
+            document.querySelector('.su_map> .ping_wrap').style='top: 90px;right: 340px';
+        };
+        });
+
+
+        //남
+        let o = 1;
+        const l_btn3 = document.getElementById('l_btn3');
+        const r_btn3 = document.getElementById('r_btn3');
+
+        document.getElementById('page_n3').innerHTML='<strong>'+o+'</strong>/5';
+
+        l_btn3.addEventListener('click',function(){
+            if(o==1){
+                o=5;
+            }else{
+                o--;
+            }
+            document.getElementById('page_n3').innerHTML='<strong>'+o+'</strong>/5';
+            document.getElementById('nam05').src='./images/main4_nam0'+o+'.jpg';
+
+            if(o==1){
+                document.querySelector('.buk_t3').innerHTML='<p>동백포레스트</p>';
+                document.querySelector('.buk_eg3').innerHTML='<li>Dongbaek Forest</li>';
+                document.querySelector('.buk_info3').innerHTML='<li>제주 동백꽃 명소인 동백포레스트는 동글동글한 애기동백나무가 심어져 있는 동백 군락지이며, 화려하게 피어난 동백꽃과 군락지를 둘러싼 돌담 그리고 나무 주변에 의자가 배치되어 있어 사진찍기에 좋다. 동백나무 주위로 조성된 산책로를 따라 올라가면 동백군락지의 전경을 내려다 볼 수 있고 애기동백꽃은 12월 말부터 1월 사이 만개해 절정에 이른다. </li>';
+                document.querySelector('.nam_map> .ping_wrap').style='top: 100px;right: 135px';
+            }else if(o==2){
+                document.querySelector('.buk_t3').innerHTML='<p>사라오름</p>';
+                document.querySelector('.buk_eg3').innerHTML='<li>Saraoreum</li>';
+                document.querySelector('.buk_info3').innerHTML='<li>사라오름에서는 분화구 내에는 노루들이 모여 살면서 한가롭게 풀을 뜯거나 호수에 물을 마시면서 뛰어노는 모습을 볼 수 있는 곳으로 오름에서 바라보는 한라산 정상과 다양한 경관이 아름다워 조망지점으로서의 가치가 있는 명승이다. 또한, 한여름에도 물이 차갑지만, 고생을 마다하지 않고 일부러 사라오름을 찾는 이들도 적지 않다. 겨울의 화구호는 거대한 아이스링크장을 방불케 한다. 고지 1300m의 꽁꽁 언 호수와 설록의 모습 또한 장관이어서 많은 등산 매니아들이 찾는다. 한편, 이 산정화구호 주변은 풍수지리설에 의하면 손꼽히는 명당으로 알려져 있다. </li>';
+                document.querySelector('.nam_map> .ping_wrap').style='top: 70px;right: 160px';
+            }else if(o==3){
+                document.querySelector('.buk_t3').innerHTML='<p>엉또폭포</p>';
+                document.querySelector('.buk_eg3').innerHTML='<li>Eongttopokpo</li>';
+                document.querySelector('.buk_info3').innerHTML='<li>&#145;엉또&#146;는 &#145;엉&#146;의 입구라고 하여 불려진 이름이다. &#145;엉&#146;은 작은 바위 그늘 집보다 작은 굴, &#145;도&#146;는 입구를 표현하는 제주어이다. 보일 듯 말듯 숲 속에 숨어 지내다 한바탕 비가 쏟아질 때 위용스러운 자태를 드러내 보이는 엉또폭포의 높이는 50m에 이른다. 주변의 기암 절벽과 조화를 이뤄 독특한 매력을 발산한다. 폭포 주변의 계곡에는 천연 난대림이 넓은 지역에 걸쳐 형성되어 있으며 사시사철 상록의 풍치가 남국의 독특한 아름다움을 자아낸다. 서귀포시 강정동 월산 마을을 지나 5백여m 악근천을 따라 올라가거나 신시가지 강창학공원 앞 도로에서 감귤 밭으로 이어진 길을 따라 서북 쪽으로 8백m 정도 가면 엉또폭포를 만날 수 있다.</li>';
+                document.querySelector('.nam_map> .ping_wrap').style='top: 130px;right: 180px';
+            }else if(o==4){
+                document.querySelector('.buk_t3').innerHTML='<p>주상절리대</p>';
+                document.querySelector('.buk_eg3').innerHTML='<li>Columnar Joints</li>';
+                document.querySelector('.buk_info3').innerHTML='<li>주상절리는 마치 예리한 조각 칼로 섬세하게 깎아낸 듯한 4~6각형 형태의 기둥으로, 현무암질 용암류에 나타나는 수직 절리를 말한다. 두꺼운 용암이 화구로부터 흘러나와 급격히 식으면서 발생하는 수축 작용의 결과로 형성되었다. 마치 계단을 쌓은 듯 겹겹이 서 있는 육모꼴의 돌 기둥이 병풍처럼 둘러 쳐져 있어 자연의 신비로움을 만끽할 수 있다. 그 기둥에 부딪히는 파도 또한 마음을 뺏기는 볼거리인데, 심할 때는 높이 20m 이상 치솟는 ‘쇼’가 펼쳐지기도 해서 보는 이의 넋을 빼앗는다. 중문·대포해안 주상절리대는 높이가 30~40m, 폭이 약 1㎞ 정도로 우리나라 최대 규모를 자랑하며, 제주도 천연기념물 제443호로 지정돼 있다.</li>';
+                document.querySelector('.nam_map> .ping_wrap').style='top: 130px;right: 225px';
+            }
+            else{
+                document.querySelector('.buk_t3').innerHTML='<p>천지연폭포</p>';
+                document.querySelector('.buk_eg3').innerHTML='<li>Handam</li>';
+                document.querySelector('.buk_info3').innerHTML='<li>천지연은 하늘과 땅이 만나 이루어진 연못이라는 의미를 담고 있는데, 폭포의 길이 22m, 그 아래 못의 깊이가 20m로, 가히 하늘과 땅이 만나는 연못이라 불린다. 천지연 폭포 서남 쪽에는 구실잣밤나무, 동백나무 등 상록수와 난 종류가 울창하게 우거져 난대림을 이루는데, 한여름에도 시원하며, 현무암으로 산책로가 잘 조성되어 있어 남녀노소 모두 편안히 자연을 감상하며 걸을 수 있다. 산책로 끝에 위치한 천지연폭포는 오후 10시까지 야간개장을 하는데, 밤에 보는 폭포의 모습도 장관이다.</li>';
+                document.querySelector('.nam_map> .ping_wrap').style='top: 130px;right: 165px';
+            };
+        });
+
+        r_btn3.addEventListener('click',function(){
+            if(o==5){
+                o=1;
+        }else{
+            o++;
+        }
+        document.getElementById('page_n3').innerHTML='<strong>'+o+'</strong>/5';
+        document.getElementById('nam05').src='./images/main4_nam0'+o+'.jpg';
+
+        if(o==1){
+            document.querySelector('.buk_t3').innerHTML='<p>동백포레스트</p>';
+            document.querySelector('.buk_eg3').innerHTML='<li>Dongbaek Forest</li>';
+            document.querySelector('.buk_info3').innerHTML='<li>제주 동백꽃 명소인 동백포레스트는 동글동글한 애기동백나무가 심어져 있는 동백 군락지이며, 화려하게 피어난 동백꽃과 군락지를 둘러싼 돌담 그리고 나무 주변에 의자가 배치되어 있어 사진찍기에 좋다. 동백나무 주위로 조성된 산책로를 따라 올라가면 동백군락지의 전경을 내려다 볼 수 있고 애기동백꽃은 12월 말부터 1월 사이 만개해 절정에 이른다. </li>';
+            document.querySelector('.nam_map> .ping_wrap').style='top: 100px;right: 135px';
+        }else if(o==2){
+            document.querySelector('.buk_t3').innerHTML='<p>사라오름</p>';
+            document.querySelector('.buk_eg3').innerHTML='<li>Saraoreum</li>';
+            document.querySelector('.buk_info3').innerHTML='<li>사라오름에서는 분화구 내에는 노루들이 모여 살면서 한가롭게 풀을 뜯거나 호수에 물을 마시면서 뛰어노는 모습을 볼 수 있는 곳으로 오름에서 바라보는 한라산 정상과 다양한 경관이 아름다워 조망지점으로서의 가치가 있는 명승이다. 또한, 한여름에도 물이 차갑지만, 고생을 마다하지 않고 일부러 사라오름을 찾는 이들도 적지 않다. 겨울의 화구호는 거대한 아이스링크장을 방불케 한다. 고지 1300m의 꽁꽁 언 호수와 설록의 모습 또한 장관이어서 많은 등산 매니아들이 찾는다. 한편, 이 산정화구호 주변은 풍수지리설에 의하면 손꼽히는 명당으로 알려져 있다. </li>';
+            document.querySelector('.nam_map> .ping_wrap').style='top: 70px;right: 160px';
+        }else if(o==3){
+            document.querySelector('.buk_t3').innerHTML='<p>엉또폭포</p>';
+            document.querySelector('.buk_eg3').innerHTML='<li>Eongttopokpo</li>';
+            document.querySelector('.buk_info3').innerHTML='<li>&#145;엉또&#146;는 &#145;엉&#146;의 입구라고 하여 불려진 이름이다. &#145;엉&#146;은 작은 바위 그늘 집보다 작은 굴, &#145;도&#146;는 입구를 표현하는 제주어이다. 보일 듯 말듯 숲 속에 숨어 지내다 한바탕 비가 쏟아질 때 위용스러운 자태를 드러내 보이는 엉또폭포의 높이는 50m에 이른다. 주변의 기암 절벽과 조화를 이뤄 독특한 매력을 발산한다. 폭포 주변의 계곡에는 천연 난대림이 넓은 지역에 걸쳐 형성되어 있으며 사시사철 상록의 풍치가 남국의 독특한 아름다움을 자아낸다. 서귀포시 강정동 월산 마을을 지나 5백여m 악근천을 따라 올라가거나 신시가지 강창학공원 앞 도로에서 감귤 밭으로 이어진 길을 따라 서북 쪽으로 8백m 정도 가면 엉또폭포를 만날 수 있다.</li>';
+            document.querySelector('.nam_map> .ping_wrap').style='top: 130px;right: 180px';
+        }else if(o==4){
+            document.querySelector('.buk_t3').innerHTML='<p>주상절리대</p>';
+            document.querySelector('.buk_eg3').innerHTML='<p>Columnar Joints</p>';
+            document.querySelector('.buk_info3').innerHTML='<p>주상절리는 마치 예리한 조각 칼로 섬세하게 깎아낸 듯한 4~6각형 형태의 기둥으로, 현무암질 용암류에 나타나는 수직 절리를 말한다. 두꺼운 용암이 화구로부터 흘러나와 급격히 식으면서 발생하는 수축 작용의 결과로 형성되었다. 마치 계단을 쌓은 듯 겹겹이 서 있는 육모꼴의 돌 기둥이 병풍처럼 둘러 쳐져 있어 자연의 신비로움을 만끽할 수 있다. 그 기둥에 부딪히는 파도 또한 마음을 뺏기는 볼거리인데, 심할 때는 높이 20m 이상 치솟는 ‘쇼’가 펼쳐지기도 해서 보는 이의 넋을 빼앗는다. 중문·대포해안 주상절리대는 높이가 30~40m, 폭이 약 1㎞ 정도로 우리나라 최대 규모를 자랑하며, 제주도 천연기념물 제443호로 지정돼 있다.</p>';
+            document.querySelector('.nam_map> .ping_wrap').style='top: 130px;right: 225px';
+        }
+        else{
+            document.querySelector('.buk_t3').innerHTML='<p>천지연폭포</p>';
+            document.querySelector('.buk_eg3').innerHTML='<li>Handam</li>';
+            document.querySelector('.buk_info3').innerHTML='<li>천지연은 하늘과 땅이 만나 이루어진 연못이라는 의미를 담고 있는데, 폭포의 길이 22m, 그 아래 못의 깊이가 20m로, 가히 하늘과 땅이 만나는 연못이라 불린다. 천지연 폭포 서남 쪽에는 구실잣밤나무, 동백나무 등 상록수와 난 종류가 울창하게 우거져 난대림을 이루는데, 한여름에도 시원하며, 현무암으로 산책로가 잘 조성되어 있어 남녀노소 모두 편안히 자연을 감상하며 걸을 수 있다. 산책로 끝에 위치한 천지연폭포는 오후 10시까지 야간개장을 하는데, 밤에 보는 폭포의 모습도 장관이다.</li>';
+            document.querySelector('.nam_map> .ping_wrap').style='top: 130px;right: 165px';
+        };
+        });
+
+
+        //북
+        let p = 1;
+        const l_btn4 = document.getElementById('l_btn4');
+        const r_btn4 = document.getElementById('r_btn4');
+        const buk_t = document.querySelectorAll('.buk_t');
+        const buk_info = document.querySelector('.buk_info');
+
+        document.getElementById('page_n4').innerHTML='<strong>'+p+'</strong>/5';
+
+        l_btn4.addEventListener('click',function(){
+            if(p==1){
+                p=5;
+            }else{
+                p--;
+            }
+            document.getElementById('page_n4').innerHTML='<strong>'+p+'</strong>/5';
+            document.getElementById('buk05').src='./images/main4_buk0'+p+'.jpg';
+
+            if(p==1){
+                document.querySelector('.buk_t4').innerHTML='<p>물찻오름</p>';
+                document.querySelector('.buk_eg4').innerHTML='<li>Mulchatoreum</li>';
+                document.querySelector('.buk_info4').innerHTML='<li> 사려니숲 축제 기간 중에만 한시적으로 개방되는 물찻오름은 제주의 기생 화산 중 몇 안 되는 산정화구호로, 물이 연중 넘실거리며 오름 전체 비탈면은 꽝꽝나무, 단풍나무 등이 빽빽이 들어선 울창한 자연림으로 이루어져 있다. 동쪽 벼랑 밑에는 복수초 군락이 형성되어 있고 그 밑에는 특정야생동식물로 지정된 관중을 비롯해 무늬천남성, 백작약 등이 자생하고 있다. 또한 분화구 주변에는 세모고랭이 등 여러 습지 식물이 분포하고 있다.</li>';
+                document.querySelector('.buk_map> .ping_wrap').style='top: 35px;right: 130px';
+
+            
+            }else if(p==2){
+                document.querySelector('.buk_t4').innerHTML='<p>이호테우 해변</p>';
+                document.querySelector('.buk_eg4').innerHTML='<li>Ihoteu</li>';
+                document.querySelector('.buk_info4').innerHTML='<li>이호테우해변은 조랑말 등대로 제주도 사진을 찍기 좋은 곳으로 붉은 조랑말과 흰색 조랑말은 극명하게 대조되는 색감이 이국적인 풍경을 선사한다. 또한, 제주 시내에서 가장 가까이 있어 교통이 편리하고, 편의시설도 잘 갖추어져 있다. 백사장의 경사가 완만하여 많은 피서객들이 찾으며 특히 야영하기에 안성맞춤인 소나무 숲이 형성되어 있다. 해수면이 가장 낮아지는 간조에는 끝없이 넓은 백사장과 함께 원담의 모습도 볼 수 있다.</li>';
+                document.querySelector('.buk_map> .ping_wrap').style='top: -5px;right: 210px';
+            
+            }else if(p==3){
+                document.querySelector('.buk_t4').innerHTML='<p>서우봉</p>';
+                document.querySelector('.buk_eg4').innerHTML='<li>Seoubong</li>';
+                document.querySelector('.buk_info4').innerHTML='<li>서우봉은 봄이면 샛노란 유채꽃이 활짝 피어나는 제주의 관광 명소이다. 이곳에는 둘레길과 산책길이 있다. 가을에는 주황색 코스모스로 장관을 이룬다.둘레길은 서우봉 언저리를 쭉 돌아볼 수 있는 길이고, 산책로는 함덕리 주민들이 낫과 호미만으로 2년에 걸쳐 조성한 약 2.5km의 길이다. 앉아서 경치를 감상하며 쉴 수 있는 정자가 있고, 다양한 제주어 글귀가 표준어 의미와 함께 적혀있는 팻말들이 이곳저곳에 있어 즐거움을 더해준다.</li>';
+                document.querySelector('.buk_map> .ping_wrap').style='top: -25px;right: 130px';
+            }else if(p==4){
+                document.querySelector('.buk_t4').innerHTML='<p>용두암</p>';
+                document.querySelector('.buk_eg4').innerHTML='<li>Ihoteu</li>';
+                document.querySelector('.buk_info4').innerHTML='<li>제주도기념물 제57호인 이곳은 용이 포요하며 바다에서 솟구쳐 오르는 형상을 따 용두암이라 이름 지어졌다. 전설에 의하면 인근 계곡 용연에서 살던 용이 승천하려다가 돌로 굳어졌다고 한다. 겉으로 드러난 부분의 높이가 10m, 바다 속에 잠긴 몸의 길이가 30m 쯤이다. 또한, 용두암에서 도두항까지 이어지는 용담-도두해안도로에는 다양한 카페와 맛집이 있어 눈과 입이 즐거운 드라이브도 즐길 수 있다.</li>';
+                document.querySelector('.buk_map> .ping_wrap').style='top: -15px;right: 200px';
+            }
+            else{
+                document.querySelector('.buk_t4').innerHTML='<p>한담해변</p>';
+                document.querySelector('.buk_eg4').innerHTML='<li>Handam</li>';
+                document.querySelector('.buk_info4').innerHTML='<li>한담해변은 제주시가 2009년 숨은 비경 31로 선정했으며, 맑고 투명한 바다로 유명하다. 애월앞바다의 장관을 편안하고 친숙하게 접할 수 있다. 해안의 모양을 따라 구불구불하게 이어지는 산책로는 1.2km에 이르며, 바다의 주변 경관과 현무암이 조화를 이루고 있다. 바다가 가까이 있어 제주의 바다를 제대로 느끼며 산책의 여유로움을 느낄 수 있다. 봄에는 유채꽃으로 채워진 산책로를 만날 수 있으며, 여름에는 초록빛이 가득한 산책로를 걸을 수 있다.</li>';
+                document.querySelector('.buk_map> .ping_wrap').style='top: 15px;right: 280px';
+            };
+            
+        });
+
+        r_btn4.addEventListener('click',function(){
+            if(p==5){
+                p=1;
+        }else{
+            p++;
+        }
+        document.getElementById('page_n4').innerHTML='<strong>'+p+'</strong>/5';
+        document.getElementById('buk05').src='./images/main4_buk0'+p+'.jpg';
+
+
+        if(p==1){
+            document.querySelector('.buk_t4').innerHTML='<p>물찻오름</p>';
+            document.querySelector('.buk_eg4').innerHTML='<li>Mulchatoreum</li>';
+            document.querySelector('.buk_info4').innerHTML='<li> 사려니숲 축제 기간 중에만 한시적으로 개방되는 물찻오름은 제주의 기생 화산 중 몇 안 되는 산정화구호로, 물이 연중 넘실거리며 오름 전체 비탈면은 꽝꽝나무, 단풍나무 등이 빽빽이 들어선 울창한 자연림으로 이루어져 있다. 동쪽 벼랑 밑에는 복수초 군락이 형성되어 있고 그 밑에는 특정야생동식물로 지정된 관중을 비롯해 무늬천남성, 백작약 등이 자생하고 있다. 또한 분화구 주변에는 세모고랭이 등 여러 습지 식물이 분포하고 있다.</li>';
+            document.querySelector('.buk_map> .ping_wrap').style='top: 35px;right: 130px';
+        }else if(p==2){
+            document.querySelector('.buk_t4').innerHTML='<p>이호테우 해변</p>';
+            document.querySelector('.buk_eg4').innerHTML='<li>Ihoteu</li>';
+            document.querySelector('.buk_info4').innerHTML='<li>이호테우해변은 조랑말 등대로 제주도 사진을 찍기 좋은 곳으로 붉은 조랑말과 흰색 조랑말은 극명하게 대조되는 색감이 이국적인 풍경을 선사한다. 또한, 제주 시내에서 가장 가까이 있어 교통이 편리하고, 편의시설도 잘 갖추어져 있다. 백사장의 경사가 완만하여 많은 피서객들이 찾으며 특히 야영하기에 안성맞춤인 소나무 숲이 형성되어 있다. 해수면이 가장 낮아지는 간조에는 끝없이 넓은 백사장과 함께 원담의 모습도 볼 수 있다.</li>';
+            document.querySelector('.buk_map> .ping_wrap').style='top: -5px;right: 210px';
+        }else if(p==3){
+            document.querySelector('.buk_t4').innerHTML='<p>서우봉</p>';
+            document.querySelector('.buk_eg4').innerHTML='<li>Seoubong</li>';
+            document.querySelector('.buk_info4').innerHTML='<li>서우봉은 봄이면 샛노란 유채꽃이 활짝 피어나는 제주의 관광 명소이다. 이곳에는 둘레길과 산책길이 있다. 가을에는 주황색 코스모스로 장관을 이룬다.둘레길은 서우봉 언저리를 쭉 돌아볼 수 있는 길이고, 산책로는 함덕리 주민들이 낫과 호미만으로 2년에 걸쳐 조성한 약 2.5km의 길이다. 앉아서 경치를 감상하며 쉴 수 있는 정자가 있고, 다양한 제주어 글귀가 표준어 의미와 함께 적혀있는 팻말들이 이곳저곳에 있어 즐거움을 더해준다.</li>';
+            document.querySelector('.buk_map> .ping_wrap').style='top: -25px;right: 130px';
+        }else if(p==4){
+            document.querySelector('.buk_t4').innerHTML='<p>용두암</p>';
+            document.querySelector('.buk_eg4').innerHTML='<li>Ihoteu</li>';
+            document.querySelector('.buk_info4').innerHTML='<li>제주도기념물 제57호인 이곳은 용이 포요하며 바다에서 솟구쳐 오르는 형상을 따 용두암이라 이름 지어졌다. 전설에 의하면 인근 계곡 용연에서 살던 용이 승천하려다가 돌로 굳어졌다고 한다. 겉으로 드러난 부분의 높이가 10m, 바다 속에 잠긴 몸의 길이가 30m 쯤이다. 또한, 용두암에서 도두항까지 이어지는 용담-도두해안도로에는 다양한 카페와 맛집이 있어 눈과 입이 즐거운 드라이브도 즐길 수 있다.</li>';
+            document.querySelector('.buk_map> .ping_wrap').style='top: -15px;right: 200px';
+        }
+        else{
+            document.querySelector('.buk_t4').innerHTML='<p>한담해변</p>';
+            document.querySelector('.buk_eg4').innerHTML='<li>Handam</li>';
+            document.querySelector('.buk_info4').innerHTML='<li>한담해변은 제주시가 2009년 숨은 비경 31로 선정했으며, 맑고 투명한 바다로 유명하다. 애월앞바다의 장관을 편안하고 친숙하게 접할 수 있다. 해안의 모양을 따라 구불구불하게 이어지는 산책로는 1.2km에 이르며, 바다의 주변 경관과 현무암이 조화를 이루고 있다. 바다가 가까이 있어 제주의 바다를 제대로 느끼며 산책의 여유로움을 느낄 수 있다. 봄에는 유채꽃으로 채워진 산책로를 만날 수 있으며, 여름에는 초록빛이 가득한 산책로를 걸을 수 있다.</li>';
+            document.querySelector('.buk_map> .ping_wrap').style='top: 15px;right: 280px';
+        };
+
+        });    
+        </script>
+
+
+
+        <!--메인5. sns유튜브, 인스타 -->
+        <section class="sns">
+            <img class="main5_bg" src="./images/main5_bg_red.png" alt="메인5배경">
+            <h2> 
+                <img src="./images/main5_bg_leaf.png" alt="나뭇잎">
+                <span> 
+                    <span class="sns_t">SNS</span>로 만나는 제주
+                </span>
+            </h2>
+            <article class="ytb">
+                <h3>유튜브</h3>
+                <div class="line_5">&nbsp;</div>
+                <ul class="ytb_t">
+                    <li>
+                        <img class="ytb_ico" src="./images/main5_youtube_ico.png" alt="유튜브"> </li>
+                    <li>YOUTUBE</li>
+                    <li>
+                        <a>SHOW ALL<i class="fa-solid fa-arrow-right"></i></a>
+                    </li>
+                </ul>
+                <ul class="ytb_vid">
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=sLjgMiAOFM0" title="유튜브 바로가기">
+                            <img src="./images/main5_ytb01.jpg" alt="웰니스 관광">
+                            <p>[웰니스관광] '아이와 함께 떠나는' 우리들의 웰니스</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=YKJeEKJjDTE" title="유튜브 바로가기">
+                            <img src="./images/main5_ytb02.png" alt="제주 유튜브">
+                            <p>외국인이 푹 빠진 제주의 가을 풍경</p>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="ist">
+                <h3>인스타</h3>
+                <div class="line_5">&nbsp;</div>
+                <ul class="ist_t">
+                    <li>
+                        <img class="ist_ico" src="./images/main5_insta_ico.png" alt="인스타">
+                    </li>
+                    <li>INSTAGRAM</li>
+                    <li>
+                        <a>SHOW ALL<i class="fa-solid fa-arrow-right"></i> </a> 
+                    </li>
+                    
+                </ul>
+                
+                    <div class="grid js-masonry">
+                        <div class="grid-item">
+                            <img src="./images/main5_ist_img01.png" alt="인스타 사진">
+                            <img src="./images/main5_ist_img02.png" alt="인스타 사진">
+                            <img src="./images/main5_ist_img03.png" alt="인스타 사진">
+                        </div>
+                        <div class="grid-item grid-item--width2">
+                            <img src="./images/main5_ist_img04.png" alt="인스타 사진">
+                            <img src="./images/main5_ist_img05.png" alt="인스타 사진">
+                            <img src="./images/main5_ist_img06.png" alt="인스타 사진">
+                        </div>
+                    </div>
+            </article>
+            <!-- 메이슨리_인스타 사진 -->
+            <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+        </section>
+
+        <!-- 관련사이트 -->
+        <section class="fs">
+            <h2>관련사이트</h2>
+            <article class="slide">
+                <h3>관련사이트 목록</h3>
+                <ul class="slide_wrap">
+                    <li>
+                        <a href="#" title="제주관광공사 바로가기">
+                            <img src="./images/main6_fs_01.png" alt="제주관광공사">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="제주도청 바로가기">
+                            <img src="./images/main6_fs_02.png" alt="제주도청">
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="#" title="이제주몰 바로가기">
+                            <img src="./images/main6_fs_03.png" alt="이제주몰">
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="#" title="한국관광공사 바로가기">
+                            <img src="./images/main6_fs_04.png" alt="한국관광공사">
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="#" title="제주컨벤션뷰로 바로가기">
+                            <img src="./images/main6_fs_05.png" alt="제주컨벤션뷰로">
+                        </a>
+                    </li>
+                </ul>
+               
+            </article> 
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-right"></i>
+        </section>
+
+        
+        <!-- 패밀리사이트 슬라이드 제이쿼리 -->
+        <script>
+            $(document).ready(function(){
+                //변수 선언
+                const l_btn = $('.slide i.fa-angle-left');
+                const r_btn = $('.slide i.fa-angle-right');
+
+                //슬라이드
+                $('.slide_wrap>li:last-child').insertBefore('.slide_wrap>li:first-child');
+
+                //1번이 처음에 오도록
+                $('.slide_wrap').css('margin-left','-100%');
+
+                //왼쪽으로 움직이는 함수
+                function moveLeft(){
+                    $('.slide_wrap').animate({'margin-left':'-200%'},300,function(){
+                        $('.slide_wrap>li:first-child').insertAfter('.slide_wrap>li:last-child');
+                        $('.slide_wrap').css('margin-left','-100%')
+                    }
+                    ); 
+                }
+                //moveLeft();
+
+                //오른쪽으로 움직이는 함수
+                function moveRight(){
+                    $('.slide_wrap').animate({'margin-left':'0%'},300,function(){
+                        $('.slide_wrap>li:last-child').insertBefore('.slide_wrap>li:first-child');
+                        $('.slide_wrap').css('margin-left','-100%');
+                    });
+                }
+
+                //시간 설정
+                let Timer = setInterval(moveLeft,2500);
+
+                //좌, 우 버튼 클릭시 각각의 함수 호출
+                l_btn.click(function(){
+                    moveRight();
+                    clearInterval(Timer);
+                });
+
+                r_btn.click(function(){
+                    moveLeft();
+                    clearInterval(Timer);
+                });
+
+                //마우스 leave시 다시 움직이게 설정
+                $('.slide i.fa-angle-left,.slide i.fa-angle-right').mouseleave(function(){
+                    clearInterval(Timer);
+                    Timer = setInterval(moveLeft,2500);
+                });
+            });
+        </script>
+
+        <!-- 탑버튼 -->
+        <aside>
+            <a href="#">TOP</a>
+        </aside>
+        <!-- top버튼 스크롤 스크립트 -->
+        <script>
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    let sPos = $(this).scrollTop();
+
+                    if(sPos>=750){
+                        $('aside a').fadeIn();
+                    }else{
+                        $('aside a').fadeOut();
+                    }
+                });
+            });
+        </script>
+
+    </main>
+
+    <!-- 푸터영역 시작 -->
+    <footer>
+        <ul class="f_lnb">
+            <li><a href="#" title="이용약관">이용약관</a></li>
+            <li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
+            <li><a href="#" title="제주관광문의">제주관광문의</a></li>
+
+        </ul>
+        <h2><!--로고지만 h1을 두개 쓸 수 없어서 h2로 줌-->
+            <a href="mindex.html" title="메인페이지로 바로가기"><img src="./images/h2_footer_logo.png" alt="하단로고"></a>
+        </h2>
+        
+
+        <ul class="f_sns">
+            <li><a href="#" title="페이스북 바로가기"><img src="./images/footer_fb_ico.png" alt="페이스북"></a></li>
+            <li><a href="#" title="인스타 바로가기"><img src="./images/footer_ist_ico.png" alt="인스타"></a></li>
+            <li><a href="#" title="네이버블로그 바로가기"><img src="./images/footer_blg_ico.png" alt="네이버블로그"></a></li>
+            <li><a href="#" title="유튜브 바로가기"><img src="./images/footer_ytb_ico.png" alt="유튜브"></a></li>
+
+        </ul>
+
+        <a href="index.html" title="pc버전보기" class="pc_btn">pc버전보기</a>
+        
+        <address>
+            <p>제주특별자치도 서귀포시 중정로 20 2층 (우)63535</p>
+            <p>대표이사 : 종구팔</p>
+            <p>사업자등록번호 : 206-84-98276</p>
+            <p>고객센터 : 1600-2928</p>
+            <p>관광문의 : 제주관광공사Tel : 064-740-6000~1</p>
+            <p>관광불편신고 : 제주안내 120콜센터(국번없이 120번)</p>
+            <p>Copyright&copy;2023 JEJUMASIL. All Rights Reserved.</p>
+        </address>
+        <!-- <p class="markup">
+            <a href="http://validator.kldp.org/check?uri=referer"
+              onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))"><img
+              src="//validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80"></a>
+        </p><br><br>
+        <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="올바른 CSS입니다!" />
+            </a>
+        </p>
+    
+        <br><br> -->
+    </footer>
+
+
+    <!-- 스와이퍼 스크립트 소스 -->
+    <script src="./script/swiper.js"></script>
+</body>
+</html> 

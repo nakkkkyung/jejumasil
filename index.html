@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제주마실</title>
+ 
+  <!-- 1. 초기화 -->
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <!-- 2. 공통서식 (pc, mobile) -->
+  <link href="./css/base.css" type="text/css" rel="stylesheet">
+  <!--3. pc레이아웃 서식-->
+  <link rel="stylesheet" href="./css/pclayout.css"  type="text/css">
+  <!--4. pc메인 서식-->
+  <link rel="stylesheet" href="./css/pcmain.css" type="text/css">
+  <!--제이쿼리 라이브러리 연결-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <!--폰트어썸-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css">
+  <!--main2 슬라이드-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css">
+  <!-- PC용 파비콘 주소-->
+  <link rel="icon" href="./images/h_logo_icon1.ico" type="image/x-icon">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> 
+
+  <script>
+    //사용자가 접속한 디바이스 환경 체크하기
+    let mobile_keys = ['iPhone','iPad','Android','BlackBerry','Windows Phone', 'SAMSUNG', 'LG', 'MOT', 'SonyErisson','Nokia'];
+
+    //만약에 주소창에 있는 경로명이 아래와 일치하면 모바일페이지 접속 안함.
+    if(document.URL.match('move_pc_screen')) mobile_keys = null;
+
+    //위 배열값 개수만큼 반복하여 검사를 하고 모바일 사용자이면 아래 내용을 실행
+    for( i in mobile_keys){ //in키워드 : 키값이 있으면 true 없으면 false
+      if(navigator.userAgent.match(mobile_keys[i]) != null){
+      location.href = "mindex.html"; 	// 모바일 홈 연결 주소
+        break;
+      }
+    }    
+  </script>
+  <script>
+    $(document).ready(function(){
+
+$('.m_hover1').click(function(){
+    $(this).css('background','orange')
+    $('.m_hover2').css('background','#ccc')
+    $('.img_wrap2').css('display','none')
+    $('.img_wrap1').css('display','flex')
+});
+
+$('.m_hover2').click(function(){
+  $(this).css('background','orange')
+  $('.m_hover1').css('background','#ccc')
+  $('.img_wrap2').css('display','flex')
+  $('.img_wrap1').css('display','none')
+})
+
+});
+  </script>
+   
+</head>
+
+<body>
+  <header>
+    <div class="gnb_wrap">
+      <h1><a href="index.html" title="로고"><img src="./images/h_logo_icon1.png" alt="로고아이콘1"><img src="./images/h_logo_icon2.png" alt="로고아이콘2"></a>
+      </h1>
+      <a href="pc_login_index.html"><i class="fa-solid fa-circle-user"></i></a>
+      <a href="#"><i class="fa-solid fa-globe"></i></a>
+
+
+      <ul class="gnb">
+        <li><a href="#" title="제주야놀자">제주야놀자</a>
+          <ul class="sub">
+            <li><a href="#" title="산/바다">산/바다</a></li>
+            <li><a href="#" title="계절">계절</a></li>
+            <li><a href="#" title="동서남북">동서남북</a></li>
+          </ul>
+        </li>
+        <li><a href="#" title="제주의 맛">제주의 맛</a>
+          <ul class="sub">
+            <li><a href="#" title="한식">한식</a></li>
+            <li><a href="#" title="중식">중식</a></li>
+            <li><a href="#" title="일식">일식</a></li>
+            <li><a href="#" title="양식">양식</a></li>
+            <li><a href="#" title="해산물">해산물</a></li>
+            <li><a href="#" title="카페">카페</a></li>
+          </ul>
+        </li>
+        <li><a href="#" title="여행추천">여행추천</a>
+          <ul class="sub">
+            <li><a href="#" title="테마여행">테마여행</a></li>
+            <li><a href="#" title="심리테스트">심리테스트</a></li>
+            <li><a href="#" title="일정여행">일정여행</a></li>
+          </ul></li>
+        <li><a href="#" title="놀거리">놀거리</a>
+          <ul class="sub">
+            <li><a href="#" title="승마">승마</a></li>
+            <li><a href="#" title="해녀체험">해녀체험</a></li>
+            <li><a href="#" title="감귤따기">감귤따기</a></li>
+            <li><a href="#" title="레이바이크">레이바이크</a></li>
+            <li><a href="#" title="서핑/카약">서핑/카약</a></li>
+            <li><a href="#" title="미로체험">미로체험</a></li>
+          </ul></li>
+        <li><a href="#" title="문화유산">문화유산</a>
+          <ul class="sub">
+            <li><a href="#" title="유네스코 3관왕">유네스코 3관왕</a></li>
+            <li><a href="#" title="세계자연유산">세계자연유산</a></li>
+            <li><a href="#" title="세계지질공원">세계지질공원</a></li>
+            <li><a href="#" title="생물권보전지역">생물권보전지역</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <h2>메인비디오</h2>
+      <video src="./video/main_video.mp4" autoplay loop muted playsinline></video>
+    </article>
+    
+    <section class="main2">
+      <div class="cosh_txt">
+      <h2>나는 걷기
+        <select id="level">
+          <option value="1">초보여행자</option>
+          <option value="2">중급여행자</option>
+          <option value="3">고급여행자</option>
+        </select> 입니다.
+      </h2>
+      <!-- <p><i class="fa-light fa-diamond">추천코스</i></p> -->
+    </div>
+      
+      <div class="wrapper begin-slide">
+        <div class="cos_txt1">  
+          <h3>첫걸음의 시작, <br> 쉬운코스부터 <br> 시작해보세요</h3>
+          <p>1코스부터 걷기보다는 쉬운코스부터 <br>차근차근 걷는게 좋아요.</p> 
+          <img src="./images/hanlabong.png" alt="" class="jello-horizontal">       
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./images/lowcos1.png" alt="초보1"></div>
+              <div class="swiper-slide"><img src="./images/lowcos2.png" alt="초보2"></div>
+              <div class="swiper-slide"><img src="./images/lowcos3.png" alt="초보3"></div>
+              <div class="swiper-slide"><img src="./images/lowcos4.png" alt="초보4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper middle-slide">
+        <div class="cos_txt2">  
+          <h3>걷기 여행에<br> 익숙해졌다면 <br>이젠 즐겨볼까요?</h3>
+          <p>걷기 여행의 또다른 즐거움을 만날 수<br> 있는 코스를 추천합니다.</p>
+          <img src="./images/hanlabong.png" alt="">          
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./images/middlecos1.png" alt="중급1"></div>
+              <div class="swiper-slide"><img src="./images/middlecos2.png" alt="중급2"></div>
+              <div class="swiper-slide"><img src="./images/middlecos3.png" alt="중급3"></div>
+              <div class="swiper-slide"><img src="./images/middlecos4.png" alt="중급4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper advanced-slide">
+        <div class="cos_txt3">  
+          <h3>도전해볼까요? <br> 난이도 어려움 <br>코스</h3>
+          <p>단, 떠나가기 전 여행 숙련도와<br>건강 상태 체크는 필수입니다.</p>   
+          <img src="./images/hanlabong.png" alt="">       
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./images/highcos1.png" alt="숙련1"></div>
+              <div class="swiper-slide"><img src="./images/highcos2.png" alt="숙련2"></div>
+              <div class="swiper-slide"><img src="./images/highcos3.png" alt="숙련3"></div>
+              <div class="swiper-slide"><img src="./images/highcos4.png" alt="숙련4"></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        $(document).ready(function(){
+
+          
+          $('#level').on("change", function(){
+            let txt = $(this).val();
+            console.log(txt); //1, 2, 3
+
+            $('.wrapper').hide();
+            //3개 박스 모두 숨기고
+            //해당 하는 박스만 나오게 하기
+            if(txt==1){
+              $('.begin-slide').show();
+            }else if(txt==2){
+              $('.middle-slide').show();
+            }else{
+              $('.advanced-slide').show();
+            }
+          });          
+        });
+
+        let swiper = new Swiper('.swiper-container', {
+          centeredSlides: false,
+          slidesPerView: '1.5',
+          loop: true,
+          autoplay: {
+            delay: 1000,
+          },
+        });
+      </script>
+      <div class="mcos_wrap">
+        <img src="./images/lowcos1.png" alt="">
+        <img src="./images/lowcos2.png" alt="">
+        <img src="./images/lowcos3.png" alt="">
+      </div>
+      <div class="hcos_wrap">
+        <img src="./images/lowcos1.png" alt="">
+        <img src="./images/lowcos2.png" alt="">
+        <img src="./images/lowcos3.png" alt="">
+      </div>
+    </section>
+    
+    <section class="main3">
+      <h2>제주에서 즐기자! <b>다양한 행사</b></h2>
+      <p>제주에서 제대로 힐링하는 법</p>  
+      <div class="deco1"><img src="./images/main2_deco.png" alt="" ></div>
+      <article class="fes_wrap">
+        <h2 class="fe_name">페스티벌</h2>
+        <ul class="menu_wrap">
+            <li class="m_hover1">
+              <img src="./images/fes_menu_logo.png" alt="">
+              <p>대표축제</p>
+            </li>            
+            <li class="m_hover2"> 
+              <img src="./images/fes_menu_logo.png" alt="">
+              <p>전시/공연</p>
+            </li>            
+        </ul>
+        <!-- 축제 -->
+        <ul class="img_wrap1">
+          <li>
+            <a href=""><img src="./images/main2_fes1.png" alt=""></a> 
+            <p>하루종일 제주도에서 놀아보자!</p>
+            <p>구팔일 올데이 페스티벌 </p>   
+            <p>2023. 04. 29 - 08. 28 <br>(매주 토요일)</p>    
+          </li>
+          <li>
+            <a href=""><img src="./images/main2_fes2.png" alt=""></a> 
+            <p>어서와 프리한 서복은 처음이지?</p>
+            <p>서복은 처음이지?</p>   
+            <p>2023. 06. 17</p>        
+          </li>
+          <li>
+            <a href=""><img src="./images/main2_fes3.png" alt=""></a> 
+            <p>바다에서 재즈와 함께 즐기자!</p>
+            <p>FILTER FESTIVAL</p>   
+            <p>2023. 07. 08 - 07.30</p>        
+          </li>
+          <li>
+            <a href=""><img src="./images/main2_fes4.png" alt=""></a> 
+            <p>자연속에서 걸으며 힐링하기</p>
+            <p>2023 제주 올레 걷기축제</p>   
+            <p>2023. 11. 02 - 11. 04</p>        
+          </li>
+        </ul>
+
+        <!-- 전시공연 -->
+        <ul class="img_wrap2">
+          <li>
+            <a href=""><img src="./images/main2_fes5.png" alt=""></a> 
+            <p>제주목 관아 야간개장</p>
+            <p>귤림풍악</p>   
+            <p>2023. 07. 29 - 10. 28</p>        
+          </li>
+          <li>
+            <a href=""><img src="./images/main2_fes6.png" alt=""></a> 
+            <p>CLUB TOUR</p>
+            <p>PERRERTONES</p>   
+            <p>2023. 07. 29</p>        
+          </li>
+          <li>
+            <a href=""><img src="./images/main2_fes8.png" alt=""></a> 
+            <p>제주 플루트 앙상블과 함께하는</p>
+            <p>숨비소리</p>   
+            <p>2023. 06. 20</p>        
+          </li>
+          <li>
+            <a href=""><img src="./images/main2_fes7.png" alt=""></a> 
+            <p>연극, 일상에 스미다</p>
+            <p>대한민국연극제</p>   
+            <p>2023. 06. 15 - 07. 03</p>        
+          </li>
+        </ul>
+      </article>
+    </section>
+    <section class="main4">
+      <div class="main4_wrap">
+        <img src="./images/main1_deco.png" alt="" class="deco2">
+        <div class="r_cos_txt">
+          <p>지도별로 보는</p>
+          <h2>동서남북 <span>추천여행코스</span></h2>
+          <p>다양한 제주도의 모습을 지도로 확인할 수있습니다. <br> 권열별 선택을 하시면 해당 지역의 추천관광지가 나타납니다.</p>
+          <img src="./images/location.png" alt="">
+        </div>
+        <div class="lo_btn">
+          <button class="east">동</button>
+          <button class="west">서</button>
+          <button class="south">남</button>
+          <button class="north">북</button>
+        </div>
+        <div id="spot_wrap">
+            <span id="page_n">&nbsp;</span>
+            <!-- <i class="fas fa-angle-left" id="l_btn"></i>
+            <i class="fas fa-angle-right" id="r_btn"></i> -->
+            <div id="spot_east"> 
+              <img src="./images/intro_east1.png" alt="" id="spot_east_img">
+              <i class="fas fa-angle-left" id="l_btn"></i>
+            <i class="fas fa-angle-right" id="r_btn"></i>
+              <a href="" title="동쪽소개보러가기">자세히보기</a>
+            </div>
+            <div id="spot_west"> 
+              <img src="./images/intro_wes1.png" alt="" id="spot_west_img">
+              <a href="" title="서쪽소개보러가기">자세히보기</a>
+              <i class="fas fa-angle-left" id="l_btn2"></i>
+            <i class="fas fa-angle-right" id="r_btn2"></i>
+            </div>
+            <div id="spot_north"> 
+              <img src="./images/intro_nor1.png" alt="" id="spot_north_img">
+              <a href="" title="북쪽소개보러가기">자세히보기</a>
+              <i class="fas fa-angle-left" id="l_btn3"></i>
+            <i class="fas fa-angle-right" id="r_btn3"></i>
+            </div>
+            <div id="spot_south"> 
+              <img src="./images/intro_sou1.png" alt="" id="spot_south_img">
+              <a href="" title="남쪽소개보러가기">자세히보기</a>
+              <i class="fas fa-angle-left" id="l_btn4"></i>
+            <i class="fas fa-angle-right" id="r_btn4"></i>
+            </div>
+        </div> 
+        <div class="map_img">
+            <img src="./images/point.png" alt="" class="point">
+            <img src="./images/map_east.png" alt="" class="map_east">
+            <img src="./images/map_west.png" alt="" class="map_west">
+            <img src="./images/map_nor.png" alt="" class="map_nor" >
+            <img src="./images/map_sou.png" alt="" class="map_sou">
+        </div>
+        </div> 
+    </section>
+    <section class="main5">
+      <h2 class="insta_name">insta</h2>
+      <div class="insta_txt">
+        <img src="./images/instajeju_logo.png" alt=""><p><span>인스타 </span>보러가기</p>     
+        <p>제주도의 다양한 사진들을 구경해보세요</p>   
+      </div>
+        <div class="insta_wrap">
+        <ul class="insta_img_wrap">
+          <li><a href=""><img src="./images/insta_img1.png" alt="" class="moon"><span>#중문색달해수욕장</span></a></li>
+          <li><a href=""><img src="./images/insta_img2.png" alt="" class="handam"><span>#한담해변</span></a></li>
+          <li><a href=""><img src="./images/insta_img3.png" alt="" class="hanra"><span>#한라산</span></a></li>
+          <li><a href=""><img src="./images/insta_img5.png" alt="" class="flower"><span>#제주수국</span></a></li>
+          <li><a href=""><img src="./images/insta_img8.png" alt="" class="suwoo"><span>#서우봉 해바라기</span></a></li>
+          <li><a href=""><img src="./images/insta_img6.png" alt="" class="namwon"><span>#남원큰엉해안경승지</span></a></li>
+          <li><a href=""><img src="./images/insta_img4.png" alt="" class="woodo"><span>#우도여행</span></a></li>
+          <li><a href=""><img src="./images/insta_img7.png" alt="" class="gamgul"><span>#서귀포 감귤밭</span></a></li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="main6">
+      <h2 class="youname">유투브</h2>
+      <div class="you_txt">
+        <img src="./images/youtubejeju_logo.png" alt=""><p><span>YOUTUBE</span> 로 만나는 <span>제주</span> </p>  
+        <p>제주도의 다양한 영상들을 시청해보세요</p>      
+      </div>
+      <ul class="youtube_wrap">
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img1.png" alt=""></a></div>
+          <span>[My Favorite 제주] <br>혼술러를 위한 제주 로컬술 여행! </span>
+        </li>
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img2.png" alt=""></a></div>
+          <span>[제주 향토음식을 찾아 떠나는 맛순례]  <br>동복해녀식당</span>
+        </li>
+        
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img3.png" alt=""></a></div>
+          <span>[리얼제주]<br>무더위를 날려버릴 제주여행코스
+          </span>
+        </li>
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img4.png" alt=""></a></div>
+          <span>2022 제로를 외쳐봐, <br> 세상에 E-RUN TRIP! - 2
+          </span>
+        </li>
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img5.png" alt=""></a></div>
+          <span>[X세대 가족여행]  <br>제주에서 즐기는 해외여행
+          </span>
+        </li>
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img6.png" alt=""></a></div>
+          <span>[친환경여행]<br>슬로우여행 - 캠핑의자
+          </span>
+        </li>
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img7.png" alt=""></a></div>
+          <span>[제주관광정보센터 상담사례]  <br>관광약자를 위한 제주여행
+          </span>
+        </li>
+        <li>
+          <div class="ytb_img">
+          <a href=""><img src="./images/you_img8.png" alt=""></a></div>
+          <span>[친환경여행]  <br>패러글라이딩 & 금오름
+          </span>
+        </li>
+      </ul>
+    </section>
+
+
+    <script>
+      $(document).ready(function(){
+        //동
+        $('.east').click(function(){
+          let n =1;
+          document.getElementById('page_n').innerHTML=n+'/5';
+          document.getElementById('spot_east_img').src='./images/intro_east'+n+'.png'
+
+          $('.east').css({
+            'background':'#19861D',
+            'color':'#fff'
+          })
+          $('.map_east').css('display','block')
+          $('.map_west').css('display','none')
+          $('.map_nor').css('display','none')
+          $('.map_sou').css('display','none')
+          $('.west,.north,.south').css({
+            'background':'#fff',
+            'color':'#333'
+          })
+          $('#spot_east').css('display','block')
+          $('#spot_west').css('display','none')
+          $('#spot_north').css('display','none')
+          $('#spot_south').css('display','none')
+
+          $('.map_img .point').css({
+            'position':'absolute',
+            'top':'-370px',
+            'left':'1070px'
+        })
+        })
+
+        //서
+        $('.west').click(function(){
+          let w=1;
+          document.getElementById('page_n').innerHTML=w+'/5';
+          document.getElementById('spot_west_img').src='./images/intro_wes'+w+'.png'
+
+          $('.west').css({
+            'background':'#19861D',
+            'color':'#fff'
+          });
+          $('.map_east').css('display','none');
+          $('.map_west').css('display','block');
+          $('.map_nor').css('display','none');
+          $('.map_sou').css('display','none');
+
+          $('.east,.north,.south').css({
+            'background':'#fff',
+            'color':'#333'
+          });
+          
+          $('#spot_east').css('display','none')
+          $('#spot_west').css('display','block')
+          $('#spot_north').css('display','none')
+          $('#spot_south').css('display','none')
+
+          $('.map_img .point').css({
+            'position':'absolute',
+            'top':'-300px',
+            'left':'700px'
+          })
+         });
+
+
+        // 남
+        $('.south').click(function(){
+          let q=1;
+          document.getElementById('page_n').innerHTML=q+'/5';
+          document.getElementById('spot_south_img').src='./images/intro_sou'+q+'.png'
+
+          $('.south').css({
+            'background':'#19861D',
+            'color':'#fff'
+          })
+          $('.map_east').css('display','none')
+          $('.map_west').css('display','none')
+          $('.map_nor').css('display','none')
+          $('.map_sou').css('display','block')
+          $('.west,.north,.east').css({
+            'background':'#fff',
+            'color':'#333'
+          })
+
+          $('#spot_east').css('display','none')
+          $('#spot_west').css('display','none')
+          $('#spot_north').css('display','none')
+          $('#spot_south').css('display','block')
+
+          
+          $('.map_img .point').css({
+            'position':'absolute',
+            'top':'-250px',
+            'left':'840px'
+        })
+        })
+
+        //북
+        $('.north').click(function(){
+          let j =1;
+          document.getElementById('page_n').innerHTML=j+'/5';
+          document.getElementById('spot_north_img').src='./images/intro_nor'+j+'.png'
+          $('.north').click(function(){
+          $('.north').css({
+            'background':'#19861D',
+            'color':'#fff'
+          })
+          $('.map_east').css('display','none')
+          $('.map_west').css('display','none')
+          $('.map_nor').css('display','block')
+          $('.map_sou').css('display','none')
+          $('.west,.east,.south').css({
+            'background':'#fff',
+            'color':'#333'
+          })
+          $('#spot_east').css('display','none')
+          $('#spot_west').css('display','none')
+          $('#spot_north').css('display','block')
+          $('#spot_south').css('display','none')
+
+          $('.map_img .point').css({
+            'position':'absolute',
+            'top':'-430px',
+            'left':'780px'
+          })
+        })
+      })
+    });
+//동쪽 사진, 지도핑 움직이기
+      let n=1;
+      const l_btn=document.getElementById('l_btn');
+      const r_btn=document.getElementById('r_btn');
+
+      document.getElementById('page_n').innerHTML=n+'/5';
+
+      r_btn.onclick=function(){
+        if(n==5){
+          n=1;
+        }else{
+          n=n+1;
+        }
+        console.log(n);
+        document.getElementById('page_n').innerHTML=n+'/5';
+        document.getElementById('spot_east_img').src='./images/intro_east'+n+'.png'
+
+        if(n==1){
+          document.querySelector('.map_img .point').style='top: -370px; right: -1070px';
+        }else if(n==2){
+          document.querySelector('.map_img .point').style='top: -443px; left: 1000px ';
+        }else if(n==3){
+          document.querySelector('.map_img .point').style='top : -350px; left :980px'
+        }else if(n==4){
+          document.querySelector('.map_img .point').style='top: -443px; left: 1000px '
+        }else if(n==5){
+          document.querySelector('.map_img .point').style='top: -370px; right: -1070px'
+        }
+        // document.getElementById('spot_west_img').src='./images/intro_wes'+n+'.png'
+        // document.getElementById('spot_north_img').src='./images/intro_nor'+n+'.png'
+        // document.getElementById('spot_south_img').src='./images/intro_sou'+n+'.png'
+      }
+
+      //서쪽 사진, 지도핑움직이기
+      let w=1;
+      const l_btn2=document.getElementById('l_btn2');
+      const r_btn2=document.getElementById('r_btn2');
+
+      document.getElementById('page_n').innerHTML=w+'/5';
+
+      r_btn2.onclick=function(){
+        if(w==5){
+          w=1;
+        }else{
+          w=w+1;
+        }
+        console.log(w);
+        document.getElementById('page_n').innerHTML=w+'/5';
+        document.getElementById('spot_west_img').src='./images/intro_wes'+w+'.png'
+
+        if(w==1){
+          document.querySelector('.map_img .point').style='top:-320px; left:650px'
+        }else if(w==2){
+          document.querySelector('.map_img .point').style='top:-320px; left:650px'
+        }else if(w==3){
+          document.querySelector('.map_img .point').style='top:-250px; left:680px'
+        }else if(w==4){
+          document.querySelector('.map_img .point').style='top:-320px; left:650px'
+        }else if(w==5){
+          document.querySelector('.map_img .point').style='top:-280px; left:620px'
+        }
+    }
+
+      l_btn.onclick=function(){
+        if(n==1){//만약에 n이 1이라면
+            n=5;//5로 나오게 변수에 5를 대입하고 
+        }else{//그렇지않다면
+            n=n-1;//n에 1을 뺀다
+        }
+        console.log(n);//1,5,4,3,2,1...
+        document.getElementById('page_n').innerHTML=n+'/5';
+        document.getElementById('spot_east_img').src='./images/intro_east'+n+'.png'
+        if(n==1){
+          document.querySelector('.map_img .point').style='top: -370px; right: -1070px';
+        }else if(n==2){
+          document.querySelector('.map_img .point').style='top: -443px; left: 1000px ';
+        }else if(n==3){
+          document.querySelector('.map_img .point').style='top : -350px; left :980px'
+        }else if(n==4){
+          document.querySelector('.map_img .point').style='top: -443px; left: 1000px '
+        }else if(n==5){
+          document.querySelector('.map_img .point').style='top: -370px; right: -1070px'
+        }
+
+    }
+      l_btn2.onclick=function(){
+        if(w==1){//만약에 n이 1이라면
+            w=5;//5로 나오게 변수에 5를 대입하고 
+        }else{//그렇지않다면
+            w=w-1;//n에 1을 뺀다
+        }
+        console.log(w);//1,5,4,3,2,1...
+        document.getElementById('page_n').innerHTML=w+'/5';
+        document.getElementById('spot_west_img').src='./images/intro_wes'+w+'.png'
+        if(w==1){
+          document.querySelector('.map_img .point').style='top:-320px; left:650px';
+        }else if(w==2){
+          document.querySelector('.map_img .point').style='top:-320px; left:650px';
+        }else if(w==3){
+          document.querySelector('.map_img .point').style='top:-250px; left:680px'
+        }else if(w==4){
+          document.querySelector('.map_img .point').style='top:-320px; left:650px'
+        }else if(w==5){
+          document.querySelector('.map_img .point').style='top:-280px; left:620px'
+        }
+      }
+
+    //북쪽 사진, 지도핑 움직이기
+    let j =1;
+    const l_btn3=document.getElementById('l_btn3');
+    const r_btn3=document.getElementById('r_btn3');
+    document.getElementById('page_n').innerHTML=j+'/5';
+
+r_btn3.onclick=function(){
+  if(j==5){
+    j=1;
+  }else{
+    j=j+1;
+  }
+  console.log(j);
+  document.getElementById('page_n').innerHTML=j+'/5';
+  document.getElementById('spot_north_img').src='./images/intro_nor'+j+'.png'
+
+  if(j==1){
+    document.querySelector('.map_img .point').style='top: -430px; left: 780px';
+  }else if(j==2){
+    document.querySelector('.map_img .point').style='top: -380px; left: 880px';
+  }else if(j==3){
+    document.querySelector('.map_img .point').style='top: -480px; left: 900px';
+  }else if(j==4){
+    document.querySelector('.map_img .point').style='top: -450px; left: 800px';
+  }else{
+    document.querySelector('.map_img .point').style='top: -410px; left: 680px';
+  }
+
+
+
+}
+
+l_btn3.onclick=function(){
+  if(j==1){
+      j=5;
+  }else{
+      j=j-1;
+  }
+  console.log(j);
+  document.getElementById('page_n').innerHTML=j+'/5';
+  document.getElementById('spot_north_img').src='./images/intro_nor'+j+'.png'
+  if(j==1){
+    document.querySelector('.map_img .point').style='top: -250px; left: 830px';
+  }else if(j==2){
+    document.querySelector('.map_img .point').style='top: -250px; left: 780px';
+  }else if(j==3){
+    document.querySelector('.map_img .point').style='top: -320px; left: 860px';
+  }else if(j==4){
+    document.querySelector('.map_img .point').style='top: -280px; left: 880px';
+  }else{
+    document.querySelector('.map_img .point').style='top: -230px; left: 815px';
+  }
+  
+}
+
+
+      //남쪽 사진, 지도핑 움직이기
+      let q=1;
+      const l_btn4=document.getElementById('l_btn4');
+      const r_btn4=document.getElementById('r_btn4');
+
+      document.getElementById('page_n').innerHTML=q+'/5';
+
+      r_btn4.onclick=function(){
+        if(q==5){
+          q=1;
+        }else{
+          q=q+1;
+        }
+        console.log(q);
+        document.getElementById('page_n').innerHTML=q+'/5';
+        document.getElementById('spot_south_img').src='./images/intro_sou'+q+'.png'
+
+        if(q==1){
+          document.querySelector('.map_img .point').style='top: -250px; left: 830px';
+        }else if(q==2){
+          document.querySelector('.map_img .point').style='top: -250px; left: 780px';
+        }else if(q==3){
+          document.querySelector('.map_img .point').style='top: -320px; left: 860px';
+        }else if(q==4){
+          document.querySelector('.map_img .point').style='top: -280px; left: 880px';
+        }else{
+          document.querySelector('.map_img .point').style='top: -230px; left: 815px';
+        }
+        // document.getElementById('spot_north_img').src='./images/intro_nor'+n+'.png'
+
+
+
+      }
+
+      l_btn4.onclick=function(){
+        if(q==1){
+            q=5;
+        }else{
+            q=q-1;
+        }
+        console.log(q);
+        document.getElementById('page_n').innerHTML=q+'/5';
+        document.getElementById('spot_south_img').src='./images/intro_sou'+q+'.png'
+        if(q==1){
+          document.querySelector('.map_img .point').style='top: -250px; left: 830px';
+        }else if(q==2){
+          document.querySelector('.map_img .point').style='top: -250px; left: 780px';
+        }else if(q==3){
+          document.querySelector('.map_img .point').style='top: -320px; left: 860px';
+        }else if(q==4){
+          document.querySelector('.map_img .point').style='top: -280px; left: 880px';
+        }else{
+          document.querySelector('.map_img .point').style='top: -230px; left: 815px';
+        }
+        
+    }
+
+    </script>
+    <section class="fs">
+      <h2 class="family">패밀리</h2>
+      <article class="slide">
+        <h2 class="familyname">패밀리사이트</h2>
+          <ul class="slide_wrap">
+              <li>
+                  <a href="#" title="제주관광공사 바로가기">
+                      <img src="./images/family1.png" alt="제주관광공사">
+                  </a>
+              </li>
+              <li>
+                  <a href="#" title="제주도청 바로가기">
+                      <img src="./images/family2.png" alt="제주도청">
+                  </a>
+              </li> 
+ 
+              <li>
+                  <a href="#" title="한국관광공사 바로가기">
+                      <img src="./images/family4.png" alt="한국관광공사">
+                  </a>
+              </li> 
+              <li>
+                  <a href="#" title="제주컨벤션뷰로 바로가기">
+                      <img src="./images/family5.png" alt="컨벤션뷰로">
+                  </a>
+              </li>
+              <li>
+                <a href="#" title="이제주몰 바로가기">
+                    <img src="./images/family3.png" alt="이제주몰">
+                </a>
+            </li> 
+            <li>
+              <a href="https://www.kma.go.kr/jeju/html/main/index.jsp" title="제주지방기상청 바로가기">
+                  <img src="./images/family6.png" alt="제주지방기상청">
+              </a>
+          </li> 
+            <li>
+              <a href="http://www.visitjeju.or.kr/" title="제주특별자치도관광협회 바로가기">
+                  <img src="./images/family7.png" alt="제주특별자치도관광협회">
+              </a>
+          </li> 
+          </ul>
+      </article>
+  </section>
+
+  <script>
+    $(document).ready(function(){
+        //변수 선언
+        const l_btn = $('.slide i.fa-angle-left');
+        const r_btn = $('.slide i.fa-angle-right');
+
+        //슬라이드
+        $('.slide_wrap>li:last-child').insertBefore('.slide_wrap>li:first-child');
+
+        //1번이 처음에 오도록
+        $('.slide_wrap').css('margin-left','-400px');
+
+        //왼쪽으로 움직이는 함수
+        function moveLeft(){
+            $('.slide_wrap').animate({'margin-left':'-800px'},300,function(){
+                $('.slide_wrap>li:first-child').insertAfter('.slide_wrap>li:last-child');
+                $('.slide_wrap').css('margin-left','-400px')
+            }
+            ); 
+        }
+        //moveLeft();
+
+        //오른쪽으로 움직이는 함수
+        function moveRight(){
+            $('.slide_wrap').animate({'margin-left':'0px'},300,function(){
+                $('.slide_wrap>li:last-child').insertBefore('.slide_wrap>li:first-child');
+                $('.slide_wrap').css('margin-left','-400px');
+            });
+        }
+
+        //시간 설정
+        let Timer = setInterval(moveLeft,2500);
+
+        //좌, 우 버튼 클릭시 각각의 함수 호출
+        l_btn.click(function(){
+            moveRight();
+            clearInterval(Timer);
+        });
+
+        r_btn.click(function(){
+            moveLeft();
+            clearInterval(Timer);
+        });
+
+        //마우스 leave시 다시 움직이게 설정
+        $('.slide i.fa-angle-left,.slide i.fa-angle-right').mouseleave(function(){
+            clearInterval(Timer);
+            Timer = setInterval(moveLeft,2500);
+        });
+    });
+</script>
+  </main>
+
+  <footer>
+    <div class="f_top">
+      <nav class="f_nav">
+        <ul>
+          <li><a href="#" title="이용약관">이용약관</a></li>
+          <li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
+          <li><a href="#" title="제주관공문의">제주관광문의</a></li>
+        </ul>        
+        <a href="mindex.html" title="모바일버전보기" class="mb_btn">모바일 버전보기</a>
+
+      </nav>
+    </div>
+    <div class="f_bottom">
+      <img src="./images/f_logo_icon.png" alt="제주로고">
+
+      <address>
+        <p>제주특별자치도 서귀포시 중정로 20 2층 (우)63525 | 대표이사 : 종구팔 </p>
+        <p>사업자등록번호 :206-84-98276 | 고객센터 : 1600-2928 | 관광문의 : 제주관광공사Tel : 064-740-6000~1 </p>
+        <p>관광불편신고 : 제주안내 120콜센터(국번없이 120번)</p>
+        <p>Copyright©2023 JEJUMASIL. All Rights Reserved.</p>
+      </address>
+
+      <ul>
+        <li><a href="" title="페이스북바로가기"><img src="./images/footer_fb_ico.png" alt="페이스북"></a></li>
+        <li><a href="" title="인스타바로가기"><img src="./images/footer_ist_ico.png" alt="인스타그램"></a></li>
+        <li><a href="" title="블로그가기"><img src="./images/footer_blg_ico.png" alt="블로그"></a></li>
+        <li><a href="" title="유투브바로가기"><img src="./images/footer_ytb_ico.png" alt="유투브"></a></li>
+      </ul>
+    </div>
+  </footer>
+ 
+  <a href="#" title="위로 바로가기" class="top_btn">TOP</a>
+  <script>
+    $(document).ready(function(){
+      $('.top_btn').click(function(){
+        $('html,body').animate({scrollTop:'0px'},300);
+        return false;
+    });
+    $('.top_btn').css('display','none');
+    $(window).scroll(function(){
+        let sPos=$(this).scrollTop();
+        console.log(sPos);
+
+        if(sPos>=900){
+          $('.top_btn').fadeIn();
+        }else{
+          $('.top_btn').fadeOut();
+        }
+
+      });
+    })
+  </script>
+
+</body>
+</html>

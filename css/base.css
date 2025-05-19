@@ -1,0 +1,16 @@
+/* base.css */
+/* 웹폰트를 사용하여 글꼴 설정한다. */
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+body{
+  font-family: "Noto Sans KR", arial, sans-serif;
+  font-size:12px;
+  color:#333;
+}
+a{color:#333;text-decoration: none;}
+
+
+
+
+
+

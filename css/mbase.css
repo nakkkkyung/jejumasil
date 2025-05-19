@@ -1,0 +1,35 @@
+/* base.css //pc, mobile 공통서식*/
+
+/* 웹폰트를 사용하여 글꼴 설정한다. */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+    body{
+        font-family: "Noto Sans KR", arial, sans-serif;
+        font-size: 12px;
+        color: #333;
+    }
+    a{
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* 태블릿, 모바일 화면 가로 스크롤 숨기기 */
+    @media screen and (max-width:1024px){
+        body{
+            overflow-x: hidden;/*모바일과 태블릿은 가로 스크롤바가 필요없음*/
+            background: #fff;/*필수*/
+        }
+    }
+
+    /* 체크박스 숨기기 */
+    #toggle{display: none;}
+    input[type=checkbox]{display: none;}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+*{margin:0px; padding:0px;}
+
+  title{
+    display:none;
+  }
+  body{
+    background:#FFF9EB;
+  }
+  fieldset{
+    width:80%;
+    text-align:center;
+    position:relative;
+    padding-top:89px;
+    background:#FFF9EB;
+    margin:0 auto;
+  }
+  legend{
+    display:none;
+  }
+  h1{
+    position:relative;
+    text-align:center;
+  }
+  h1 img{
+    width:140px;
+    padding-bottom:42px;
+  }
+  .first input{
+    width:250px;
+    height:50px;
+  }
+  .log_name{
+    display:none;
+  }
+  #id_text, #pw_text, #login_btn{
+    width:288px;
+    height:32px;
+  }
+  #id_text, #pw_text{
+    font-weight:bold;
+    text-indent:10px;
+    font-size:10px;
+    border:1px solid #CCCCCC;
+  }
+  #id_text:focus, #pw_text:focus{
+    border-color: #FFC943;
+    outline: none;
+  }
+  #pw_text::placeholder,#id_text::placeholder{
+    color:#797979;
+  }
+  #login_btn{
+    width:289px;
+    font-size:12px;
+    border: none;
+    background:#FFC943;color:#ffffff;
+    margin-bottom:10px;
+  }
+  #id_text, #pw_text{
+    margin-bottom:7px;
+  }
+  .id_save_p{
+    margin-bottom:18px;
+    font-size:10px;
+    position:relative;
+    text-align:left;
+  }
+  #ch{
+    width:13px;
+    height:13px;
+  }
+    #che{
+    position:relative;
+    top:1px;
+  }
+  fieldset > .id_save{
+    font-size:10px;
+    text-align:center;
+    position:relative;
+    margin-bottom:54px;
+  }
+  .logbt{
+    width:288px;
+    position:relative;
+    margin:0 auto;
+  }
+  ul.sns{
+    display:flex;
+    justify-content:center;
+  }
+  .sns img{
+    width:10px;
+    padding:10px;
+  }
+  .p01{
+    font-size:10px;
+    color:rgb(59, 59, 59);
+    margin-bottom:124px;
+  }
+  .p01 a{
+    text-decoration:none;
+    color:black;
+  }
+  .sns img{
+    width:36px;
+    margin-bottom:127px;
+  }
+  h2 > span {
+    color:#555555;
+    font-size:10px;
+    position:relative;
+    background: #FFF9EB;
+    padding:0px 10px;
+    z-index: 10;
+    margin-bottom:17px;
+  }
+  h2::after{
+    display:block;
+    content:"";
+    background:#ccc;
+    height:1px;
+    width:300px;
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%,-5px);
+    z-index:1;
+  }

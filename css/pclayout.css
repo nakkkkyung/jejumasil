@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+/*헤더서식*/
+header{width: 100%;}
+.gnb_wrap{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    transition: 0.3s;
+    z-index: 2; /*주는 이유가 뭐죠?*/
+    overflow: hidden;
+    /* background: rebeccapurple; */
+}
+.gnb_wrap>h1>a>img{
+    position: absolute;
+    left: 30px;top: 10px;
+    width:80px;
+}
+.gnb_wrap>h1>a>img:last-child{
+    left: 120px;top: 50px;
+}
+i.fa-solid{
+    position: absolute;
+    right: 30px;top: 30px;
+    font-size: 44px;
+    color: #fff;
+}
+i.fa-circle-user{right: 85px;}
+
+.gnb{
+    width: 50%;margin: 0 auto;
+    /* background: yellow; */
+    display: flex;
+    justify-content: space-around;
+}
+.gnb>li{
+    padding-top: 30px;
+    font-size:25px;
+    text-align: center;
+}
+.gnb li a:hover{
+    font-weight: bold;
+}
+.gnb li{line-height: 60px;}
+.gnb li a{color: #fff;}
+.sub li{font-size: 20px;
+text-align: center;}
+
+.gnb_wrap:hover{height: 600px;}
+.gnb_wrap:hover i.fa-solid{color: #333;}
+.gnb_wrap:hover{
+    height: 500px;
+    background: #fff;
+}
+.gnb_wrap:hover .gnb li a{color: #333;}
+
+
+/*푸터서식*/
+footer{
+    width: 100%; 
+    background: #484848;
+    color: aliceblue;
+    padding: 10px 0;
+}
+.f_top{
+    width: 1200px;
+    line-height: 40px;
+    margin: 0px auto;
+}
+.f_nav{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    position: relative;
+}
+.f_nav ul{
+    display: flex;
+    width: 490px;
+}
+.f_nav ul li{
+    font-size:14px;
+    margin-right: 20px;
+}
+.f_nav ul li a{
+    color: #fff;
+}
+.mb_btn{
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 120px;height: 40px;
+    border: 1px solid #eee;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: #eee;
+    background: rgba(0,0,0,0.5);
+}
+.mb_btn:hover{
+    background: rgb(0, 94, 0);
+    transition: 0.3s ;
+}
+
+.f_bottom{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px;
+}
+.f_bottom> img{
+    width: 200px;
+}
+.f_bottom ul{
+    display: flex;
+    position: relative;
+    
+    top: 30px;
+    
+}
+.f_bottom>ul> li{
+    width: 30px;
+}
+.f_bottom>ul> li:first-child{
+    width: 29px;
+}
+
+.f_bottom>ul> li:not(:last-child){
+    margin-right: 10px;
+}
+.f_bottom li img{
+    width: 100%;
+    
+}
+
+.f_bottom address{font-style: normal;}
+.f_bottom address p {
+    line-height: 30px;
+    font-size: 12px;
+}
+.f_bottom address p:last-child {line-height: 50px;}
+
+

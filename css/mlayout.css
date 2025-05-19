@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+/*모바일 헤더, 푸터 서식*/
+
+header{
+    height: 70px;
+    position: fixed;
+    top: 0px;left: 0px;
+    width: 100%;/*포지션 픽스드를 걸면 w값이 없어져서 무조건 100%를 줘야함*/
+    z-index: 1000;/*포지션 픽스드를 걸면 메인콘텐츠보다 높이 올라와야해서*/
+    background:  rgba(0,0,0,0.2);/*스크롤 내릴때 헤더 배경이 흰색이어야 해서*/
+    box-shadow: 0px 0px 3px #ccc;
+    /*x축, y축, 오프셋(부드럽게 퍼지게하기)
+    헤더랑 콘텐츠의 구분을 위해서 그림자를 티 안나게 넣어줌
+    */
+}
+header > h1{
+    padding-left: 5px; 
+    padding-top: 5px;
+    /* z-index: 9999; */
+}
+header > h1 img{
+    height: 60px;
+}
+
+
+
+header> .toggle > img{
+    display: block;
+    position: absolute;
+    right: 10px;top: 13px;
+    width: 36px;height: 36px;
+    padding: 4px;
+}
+.navi{display: none;}
+
+
+
+/* gnb서식 */
+.navi{
+    width: 100%;height: 100vh;
+    padding-top: 50px;
+    position: fixed;
+    top: 0;left: 0%;
+    position: relative;
+    background: #FFF;
+    text-align: center;
+}
+.navi>i.fa-times{
+    position: absolute;
+    right: 3%;top: -55px;
+    font-size: 36px;
+    padding: 4px;
+}
+.lnb{
+   display: flex;
+   width: 70%;
+   margin: 0px auto;
+   justify-content: space-around;
+   padding-bottom: 40px;
+}
+fieldset>legend{
+    display: none;
+}
+input[type=text]{
+    border: 1px solid #54AAD6;
+    padding: 3px 0px 1px 0px;
+    border-radius: 20px;
+    text-indent: 5px;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+#search:focus{
+    outline: 2px solid #54AAD6;
+}
+.fa-search{
+    color: #54AAD6;
+    font-size: 0.9rem;
+    position: relative;
+    top: -17px;padding-left: 10px;
+}
+.gnb{
+    width: 90%;
+    margin: 0px auto;
+    padding: 10px 0px;
+    text-align:justify;
+    color: #333;
+    font-size: 1rem;
+}
+i.fas{
+    cursor: pointer;
+}
+.gnb i.fa-angle-down{
+    color: #93DBE2;
+}
+i.fa-angle-up{
+    color: #93DBE2;
+
+}
+.gnb>li>p{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #93DBE2;
+}
+.sub{
+    width: 90%;
+    padding: 10px;
+    line-height: 50px;
+    font-size: 0.9rem;
+}
+.sub>li a{
+    display: block;
+}
+
+.gnb>li{
+   width: 100%;
+   line-height: 70px;
+}
+
+
+.flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.flex>i{margin-top: 15px;}
+
+
+
+
+
+/* 푸터영역 서식 */
+footer{
+    background: #484848;
+    text-align: center;
+    /* position: relative; */
+}
+.f_lnb{
+    border-top: 2px solid #000;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+.f_lnb > li{
+    line-height: 40px;
+}
+footer > h2{
+    padding: 20px 0px 10px 0px;
+}
+footer > h2 img{
+    width: 111px;
+    max-width: 220px;/*로고가 너무 커지는 것을 막기위해 최대값 줌*/
+}
+
+.f_sns{
+    display: flex;
+    justify-content: center;
+}
+.f_sns > li{
+    margin: 0px 5px 10px 5px;
+}
+.f_sns img{
+    width: 34px;
+    padding: 10px;
+}
+
+address{/*잘 보지 않기때문에 글씨크기를 작게 해야함*/
+    margin: 0px auto;
+    font-size: 0.75rem;/*12px*/
+    font-style: normal;
+    line-height: 22px;
+    width: 280px;
+
+}
+address > p{
+    text-align: left;
+    color: #fff;
+}
+address > p:last-child{
+    color: #fff;
+    padding-bottom: 20px;
+}
+/* pc버튼 서식 */
+.pc_btn{
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    line-height: 20px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+.pc_btn:active{
+    background: rgb(0,94,0);
+}
+.pc_btn:hover{
+    background: rgb(0,94,0);
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
